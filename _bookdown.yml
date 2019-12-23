@@ -1,5 +1,21 @@
-book_filename: "book-test"
-delete_merged_file: true
+---
+description: "This is the description text from _bookdown.yml"
+
+# Bibliography Settings
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+
+# Book styling
 language:
   ui:
     chapter_name: "Chapter "
+
+# Build Settings
+documentclass: book
+book_filename: "book-test"
+
+new_session: yes  # render each chapter in its own R session
+
+delete_merged_file: true
+---

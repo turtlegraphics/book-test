@@ -19,3 +19,5 @@ slides/*/*/*.png
 *.swp
 rsconnect/*
 crc*
+*.rds
+*.log
