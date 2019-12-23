@@ -17,7 +17,7 @@ rmd_files: [
 new_session: yes
 
 # Generate a list of packages used
-after_chapter_script: auto-package-list.R
+after_chapter_script: package-list.R
 
 # Book styling
 language:
