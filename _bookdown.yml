@@ -1,7 +1,20 @@
 ---
-description: "This is the description text from _bookdown.yml"
+#
+# Chapters
+#
+rmd_files: [
+  "index.Rmd",
+  "preface.Rmd",
+  "01-intro.Rmd",
+  "02-literature.Rmd",
+  "03-method.Rmd",
+  "04-application.Rmd",
+  "05-summary.Rmd",
+  "06-references.Rmd"
+  ]
 
 # Bibliography Settings
+after_chapter_script = auto-package.bib  # make bib entries for all R packages used
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
@@ -14,8 +27,8 @@ language:
 # Build Settings
 documentclass: book
 book_filename: "book-test"
+output_dir: "_book"
 
-new_session: yes  # render each chapter in its own R session
-
-delete_merged_file: true
+# Knit-then-Merge (KM) build renders each .Rmd file in its own session
+new_session: yes
 ---
