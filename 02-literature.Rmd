@@ -1,5 +1,5 @@
 # Literature
-Here is a review of existing methods.
+This chapter uses `dplyr`[@R-dplyr]
 
 ```{r}
 library("dplyr")

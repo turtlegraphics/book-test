@@ -16,11 +16,18 @@ description: >-
    and explorations of inference assumptions.
 
 site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
+
+bibliography: [book.bib,packages.bib]
+biblio-style: apalike
+link-citations: yes
 ---
 
 ```{r include=FALSE}
-# Start the bib database for R packages used in this book.
-#    _bookdown.yml has an instruction that causes the script auto-package-bib.R
-#    to run after each chapter and include its packages.
-knitr::write_bib(c('base', 'bookdown', 'knitr', 'rmarkdown'), file='packages.bib')
+packs <- c("bookdown","rmarkdown","knitr")
+if (!is.null(packs)) {
+  packfile <- file("package-list.log","a")
+  writeLines(packs,packfile)
+  close(packfile)
+}
 ```
+

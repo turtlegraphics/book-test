@@ -1,3 +1,9 @@
 # Methods
 
-We describe our methods in this chapter.
+This chapter uses `ggplot` [@R-ggplot2]
+
+```{r}
+library(ggplot2)
+ggplot(quakes,aes(x=long,y=lat))+geom_point()
+```
+

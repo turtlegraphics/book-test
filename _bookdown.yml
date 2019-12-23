@@ -13,11 +13,11 @@ rmd_files: [
   "06-references.Rmd"
   ]
 
-# Bibliography
-after_chapter_script: auto-package-bib.R  # make bib entries for all R packages used
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
+# Knit-then-Merge (KM) build renders each .Rmd file in its own session
+new_session: yes
+
+# Generate a list of packages used
+after_chapter_script: auto-package-list.R
 
 # Book styling
 language:
@@ -28,7 +28,15 @@ language:
 documentclass: book
 book_filename: "book-test"
 output_dir: "_book"
-
-# Knit-then-Merge (KM) build renders each .Rmd file in its own session
-new_session: yes
+clean:
+ - book-test.md
+ - packages.bib
+ - book-test.out
+ - book-test.blg
+ - book-test.toc
+ - book-test.aux
+ - book-test.log
+ - book-test.synctex.gz
+ - package-list.log
+ 
 ---

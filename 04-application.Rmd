@@ -1,7 +1,14 @@
 # Applications
+```{r echo=FALSE}
+library(dplyr)
+```
 
 Some _significant_ applications are demonstrated in this chapter.
 
 ## Example one
+```{r}
+quakes %>% arrange(desc(mag)) %>% top_n(10,mag)
+```
 
 ## Example two
+What?
