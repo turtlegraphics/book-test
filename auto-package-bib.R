@@ -5,7 +5,11 @@
 # It automatically writes all packages to the end of the file "packages.bib"
 # which is created in the index.Rmd file
 #
-bib <- unlist(knitr::write_bib(.packages()))
-bibfile <- file("packages.bib","a")
-writeLines(bib,bibfile)
-close(bibfile)
+packs <- .packages()
+packs <- packs[packs!='base']
+bib <- unlist(knitr::write_bib(packs))
+if (!is.null(bib)) {
+  bibfile <- file("packages.bib","a")
+  writeLines(bib,bibfile)
+  close(bibfile)
+}

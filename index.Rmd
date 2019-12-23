@@ -19,6 +19,8 @@ site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 ---
 
 ```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c('bookdown', 'knitr', 'rmarkdown'), file='packages.bib')
+# Start the bib database for R packages used in this book.
+#    _bookdown.yml has an instruction that causes the script auto-package-bib.R
+#    to run after each chapter and include its packages.
+knitr::write_bib(c('base', 'bookdown', 'knitr', 'rmarkdown'), file='packages.bib')
 ```

@@ -13,8 +13,8 @@ rmd_files: [
   "06-references.Rmd"
   ]
 
-# Bibliography Settings
-after_chapter_script = auto-package.bib  # make bib entries for all R packages used
+# Bibliography
+after_chapter_script: auto-package-bib.R  # make bib entries for all R packages used
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
