@@ -1,3 +1,14 @@
 # Final Words
+Will this break LaTeX?
 
-We have finished a nice book.
+```{definition}
+Let $A$ and $B$ be events in a sample space $S$. 
+
+1. $A \cap B$ is the set of outcomes that are in  *both* $A$ and $B$.
+2. $A \cup B$ is the set of outcomes that are in *either* $A$ or $B$ (or both).
+3. $\overline{A}$ is the set of outcomes that are *not* in $A$ (but are in $S$). 
+4. $A \setminus B$ is the set of outcomes that are in $A$ and not in $B$.
+
+```
+
+Yes?
