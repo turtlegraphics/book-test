@@ -17,6 +17,7 @@ description: >-
 
 site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 
+documentclass: book
 bibliography: [book.bib,packages.bib]
 biblio-style: apalike
 link-citations: yes

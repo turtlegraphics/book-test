@@ -25,7 +25,6 @@ language:
     chapter_name: "Chapter "
 
 # Build Settings
-documentclass: book
 book_filename: "book-test"
 output_dir: "_book"
 clean:
