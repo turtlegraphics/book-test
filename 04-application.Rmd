@@ -1,6 +1,6 @@
 # Applications
 ```{r echo=FALSE}
-library(dplyr)
+suppressMessages(suppressWarnings(library(dplyr)))
 ```
 
 Some _significant_ applications are demonstrated in this chapter.
@@ -10,5 +10,19 @@ Some _significant_ applications are demonstrated in this chapter.
 quakes %>% arrange(desc(mag)) %>% top_n(10,mag)
 ```
 
-## Example two
-What?
+## Exercises
+
+@work. Work it
+
+@make. Make it
+
+@do. Do it
+
+Now what happens?
+
+@us. Makes us
+
+@better. Harder, better, faster, stronger.
+
+```{r child = 'solutions-04.Rmd', eval=FALSE}
+```
