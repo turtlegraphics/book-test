@@ -25,5 +25,5 @@ Now what happens?
 
 @better. Harder, better, faster, stronger.
 
-```{r child = 'solutions-04.Rmd', eval={{includeSolutions}}}
+```{r child = 'solutions/solutions-04.Rmd', eval={{includeSolutions}}}
 ```
