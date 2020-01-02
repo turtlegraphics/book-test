@@ -1,6 +1,7 @@
 # Applications
 ```{r echo=FALSE}
 suppressMessages(suppressWarnings(library(dplyr)))
+includeSolutions <- TRUE
 ```
 
 Some _significant_ applications are demonstrated in this chapter.
@@ -24,5 +25,5 @@ Now what happens?
 
 @better. Harder, better, faster, stronger.
 
-```{r child = 'solutions-04.Rmd', eval=FALSE}
+```{r child = 'solutions-04.Rmd', eval={{includeSolutions}}}
 ```
