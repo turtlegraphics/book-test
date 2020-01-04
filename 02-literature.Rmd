@@ -1,5 +1,6 @@
 # Literature
 This chapter uses `dplyr`[@R-dplyr]
+\index{mtcars}\index{dplyr}
 
 ```{r}
 library("dplyr")

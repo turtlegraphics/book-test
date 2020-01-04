@@ -1,5 +1,6 @@
 # Final Words
 Will this break LaTeX?
+\index{LaTeX}
 
 ```{definition}
 Let $A$ and $B$ be events in a sample space $S$. 

@@ -2,6 +2,8 @@
 
 This chapter uses `ggplot` [@R-ggplot2]
 
+\index{ggplot}\index{quakes}
+
 ```{r}
 library(ggplot2)
 ggplot(quakes,aes(x=long,y=lat))+geom_point()
