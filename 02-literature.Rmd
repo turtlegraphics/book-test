@@ -29,17 +29,17 @@ Then came the Dirty Bibs. They wore plain white bibs, checker bibs, stripe bibs,
 Next came the Clean Ears. They were proud. How they got into the procession nobody knows. Their ears were all clean. They were clean not only on the outside but they were clean on the inside. There was not a speck of dirt or dust or muss or mess on the inside nor the outside of their ears. And so in the wedding procession of the Rag Doll and the Broom Handle, they wiggled their ears and looked around and wiggled their ears again.
 
 ## Exercises
-@loss How did Rag Doll lose her eyes?
+@loss. How did Rag Doll lose her eyes?
 
-@fixed Who fixed Rag Doll's eyes?
+@fixed. Who fixed Rag Doll's eyes?
 
-@remade What are Rag Doll's eyes made of now?
+@remade. What are Rag Doll's eyes made of now?
 
-@nickname What was Rag Doll's nickname?
+@nickname. What was Rag Doll's nickname?
 
-@procession Why was there a procession?
+@procession. Why was there a procession?
 
-@matching In the passage there were five groups in the procession. They were the Spoon Lickers, the Tin Pan Bangers, the Chocolate Chins, the Dirty Bibs, and the Clean Ears. Write  the correct group for each description below.
+@matching. In the passage there were five groups in the procession. They were the Spoon Lickers, the Tin Pan Bangers, the Chocolate Chins, the Dirty Bibs, and the Clean Ears. Write  the correct group for each description below.
     a. Used knives and forks __________________________
     b. Had something sweet or fat__________________________
     c. Wiggled something  __________________________
