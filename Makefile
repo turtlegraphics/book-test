@@ -22,6 +22,9 @@
 # not really any error checking.
 #
 
+html: 
+	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+
 ifndef chapter
 # Full book pdf build
 pdf:
@@ -37,9 +40,6 @@ pdf: _bookdown_chapter.yml
 
 endif
 
-html: 
-	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
-
 # sed/awk magic to replace the rmd_files with the correct chapters
 # .INTERMEDIATE tag means this file will get deleted after the build
 .INTERMEDIATE: _bookdown_chapter.yml
@@ -47,3 +47,11 @@ _bookdown_chapter.yml:
 	echo $(chapters)
 	sed '/^rmd_files/,/]/d' _bookdown.yml |\
 	awk -v n=5 -v s="rmd_files: $(chapters)" 'NR == n {print s} {print}' > _bookdown_chapter.yml
+
+.PHONY:
+clean:
+	rm -f _main.md _main.rds _book/*.tex _book/*.pdf chapter-*.log chapter-*.pdf chapter-*.tex
+	rm -f bookdown*.bak
+	rm render*.rds
+	rm tmp-pdfcrop-*.tex
+

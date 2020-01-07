@@ -16,11 +16,11 @@ quakes %>% arrange(desc(mag)) %>% top_n(10,mag)
 
 ## Exercises
 
-@work. Work it\index{work it!daft punk}
+@work. Work it\index{daft punk!work it}
 
-@make. Make it\index{make it!daft punk}
+@make. Make it\index{daft punk!make it}
 
-@do. Do it\index{do it!daft punk}
+@do. Do it\index{daft punk!do it}
 
 Now what happens?
 
