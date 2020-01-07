@@ -4,6 +4,11 @@ This chapter uses `ggplot` [@R-ggplot2]
 
 \index{ggplot}\index{quakes}
 
+```{theorem}
+Theorem blocks don't work well.
+```
+
+Here is a plot:
 ```{r}
 library(ggplot2)
 ggplot(quakes,aes(x=long,y=lat))+geom_point()
