@@ -38,7 +38,7 @@ def replace_definition(match):
     If word is not an exercise, leave it unchanged."""
     if match.group(1) in exercises:
         r = str(exercises[match.group(1)])
-        r += match.expand(r'.<!--\1.-->')
+        r += match.expand(r'. <!--\1.-->')
     else:
         r = match.group(0)
     return r
@@ -59,7 +59,7 @@ for l in lines:
         newl = re.sub(r'^@(\w+).',replace_definition,l)
         newl = re.sub(r'@(\w+)',replace_reference, newl)
     else:
-        newl = re.sub(r'^[0-9]+.<!--(\w+).-->',r'@\1.',l)
+        newl = re.sub(r'^[0-9]+. <!--(\w+).-->',r'@\1.',l)
         newl = re.sub(r'[0-9]+<!--@(\w+)-->',r'@\1',newl)
 
     sys.stdout.write(newl)
