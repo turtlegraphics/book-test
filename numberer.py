@@ -32,7 +32,18 @@ if way == "fix":
             exnum += 1
 
 # Convert
-def repl(match):
+def replace_definition(match):
+    """Given a match to @word. at start of line, return the exercise
+    number with  a following comment #.<!--@word.-->
+    If word is not an exercise, leave it unchanged."""
+    if match.group(1) in exercises:
+        r = str(exercises[match.group(1)])
+        r += match.expand(r'.<!--\1.-->')
+    else:
+        r = match.group(0)
+    return r
+
+def replace_reference(match):
     """Given a match to @word, return the exercise number with
     a following comment <!--@word-->. If word is not an exercise,
     leave it unchanged."""
@@ -45,8 +56,10 @@ def repl(match):
 
 for l in lines:
     if way == "fix":
-        newl = re.sub(r'@(\w+)',repl, l)
+        newl = re.sub(r'^@(\w+).',replace_definition,l)
+        newl = re.sub(r'@(\w+)',replace_reference, newl)
     else:
-        newl = re.sub(r'[0-9]+<!--@(\w+)-->',r'@\1',l)
+        newl = re.sub(r'^[0-9]+.<!--(\w+).-->',r'@\1.',l)
+        newl = re.sub(r'[0-9]+<!--@(\w+)-->',r'@\1',newl)
 
     sys.stdout.write(newl)
