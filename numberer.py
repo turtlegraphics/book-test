@@ -7,6 +7,7 @@ usage: numberer [fix|unfix] <file>
    use unfix to change numbered list back to @name
 """
 
+# Argument parsing
 try:
     way = sys.argv[1]
     assert(way == "fix" or way == "unfix")
@@ -16,31 +17,36 @@ except:
     sys.stderr.write(usage)
     sys.exit()
 
+# Read file
 lines = infile.readlines()
 infile.close()
 
-exercise = 1
+# Build dictionary of @problems (if fixing)
+exnum = 1
+exercises = {}
+if way == "fix":
+    for l in lines:
+        match = re.match(r'^@(\w+)\.',l)
+        if match:
+            exercises[match.group(1)] = exnum
+            exnum += 1
 
-def fix(l):
-    global exercise
-    newl = re.sub(r'^@([^ ]+)\.',r'<!--@\1-->',l)
-    if l != newl:
-        newl = ("%d. " % exercise) + newl
-        exercise += 1
-        sys.stderr.write(newl)
-    return newl
-
-def unfix(l):
-    newl = re.sub(r'^[1-9]+\. <!--(@[^-]*)-->',r'\1.',l)
-    if l != newl:
-        sys.stderr.write(newl)
-    return newl
+# Convert
+def repl(match):
+    """Given a match to @word, return the exercise number with
+    a following comment <!--@word-->. If word is not an exercise,
+    leave it unchanged."""
+    if match.group(1) in exercises:
+        r = str(exercises[match.group(1)])
+        r += match.expand(r'<!--@\1-->')
+    else:
+        r = match.group(0)
+    return r
 
 for l in lines:
     if way == "fix":
-        newl = fix(l)
+        newl = re.sub(r'@(\w+)',repl, l)
     else:
-        newl = unfix(l)
+        newl = re.sub(r'[0-9]+<!--@(\w+)-->',r'@\1',l)
 
     sys.stdout.write(newl)
-
