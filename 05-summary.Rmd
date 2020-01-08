@@ -1,6 +1,11 @@
 # Final Words
-Will this break LaTeX?
-\index{LaTeX}
+
+Please answer question @easy.  Question @easy should be and easy warmup for question @skills. Answer question @skills before trying question @hard.  Question @impossible doesn't actually exist.
+
+
+Watch out for bookdown\index{bookdown} blocks (theorem, definition, etc.) that end with an enumerated list,
+because if you don't terminate the list the LaTeX\index{LaTeX} code will break.
+
 
 ```{definition}
 Let $A$ and $B$ be events in a sample space $S$. 
@@ -12,4 +17,16 @@ Let $A$ and $B$ be events in a sample space $S$.
 
 ```
 
-Yes?
+Now you're ready for questions @easy and @skills, but probably need to study more before working question @hard.
+
+## Exercises
+
+Question @easy is easy.
+
+@easy. What is $S$?
+
+Questions @hard and @impossible are harder.
+
+@skills. Show $\overline{\overline{(A+B)}+C} = A \cap \overline{C} + B \cap \overline{C}$
+
+@hard. Given a formula $F(A_1,\dotsc,A_n)$ made from $\cup$,$\cap$, and set complement, find events $A_1,\cdots,A_n$ so that the set $F(A_1,\dotsc,A_n)$ is nonempty.
