@@ -5,7 +5,12 @@ This chapter uses `ggplot` [@R-ggplot2]
 \index{ggplot}\index{quakes}
 
 ```{theorem}
-Theorem blocks don't work well.
+Theorem blocks don't work well.  Here is why:
+
+1. If you have a list
+2. At the end
+3. It breaks the latex.
+
 ```
 
 Here is a plot:
