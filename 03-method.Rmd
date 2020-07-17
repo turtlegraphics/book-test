@@ -19,39 +19,7 @@ library(ggplot2)
 ggplot(quakes,aes(x=long,y=lat))+geom_point()
 ```
 
-## Old-style exercises
-1.
-    a. Create a scatterplot of the number of doubles hit in each year from 1871-2015.
-    b. Create a scatterplot of the number of doubles hit in each year from 1871-2015 in each league. Color the NL blue and the AL red.
-1. Create boxplots for total runs scored per year in the AL and the NL from 1969-2015. 
-1.
-    a. Create a histogram of lifetime batting averages (H/AB) for all players who have at least 1000 career AB's. 
-    b. In your histogram from (d), color the NL blue and the AL red. (If a player played in both the AL and NL, count their batting average in each league if they had more than 1000 AB's in that league.)
-    
-    &nbsp;
-1. Use the `People` data set from the `Lahman` library.
-    a. Create a barplot of the birthmonths of all players. (Hint: `geom_bar()`)
-    b. Create a barplot of the birth months of the players born in the USA after 1970.
-
-Exercises @babycount - @jessie use the `babynames` data set from the `babynames` library, which you probably need to install.
-
-1. Make a line graph showing the total number of babies of each sex, plotted over time.
-1. Make a line graph showing the number of different names used for each sex, plotted over time.
-1. Make a line graph showing how many babies of your gender have your name, plotted over time.  If your name doesn't appear in the data, use the female name "Alexa".
-1. Make a line graph comparing the number of boys named Bryan and the number of boys named Brian from 1920 to the present.
-1. I wish that I had Jessie's girl, or maybe Jessie's guy? One one graph, plot the number of male and female babies named Jessie over time.
-
-    Three time periods show up in the history of Jessie:
-
-    - More male than female Jessie
-    - More female than male Jessie
-    - About the same male and female Jessie.
-    
-    Approximately what range of years does each time period span?
-
-1. Data scientist Kieran Healy created this widely circulated figure:
-
-## Exercises
+## Exercises {-}
 @doubles.
     a. Create a scatterplot of the number of doubles hit in each year from 1871-2015.
     b. Create a scatterplot of the number of doubles hit in each year from 1871-2015 in each league. Color the NL blue and the AL red.
