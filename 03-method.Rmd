@@ -4,6 +4,10 @@ This chapter uses `ggplot` [@R-ggplot2]
 
 \index{ggplot}\index{quakes}
 
+After spending all day getting henna designs drawn, she noticed she had a foot note.[^henna]
+
+[^henna]: This joke (c) 2020 by Bryan Clair.
+
 ```{theorem}
 Theorem blocks don't work well.  Here is why:
 
