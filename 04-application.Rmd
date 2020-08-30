@@ -14,7 +14,7 @@ quakes %>% arrange(desc(mag)) %>% top_n(10,mag)
 ```
 \index{quakes}
 
-## Exercises
+## Exercises {-}
 
 @work. Work it\index{daft punk!work it}
 

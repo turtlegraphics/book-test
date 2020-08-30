@@ -19,7 +19,7 @@ Let $A$ and $B$ be events in a sample space $S$.
 
 Now you're ready for questions @easy and @skills, but probably need to study more before working question @hard.
 
-## Exercises
+## Exercises {-}
 
 Question @easy is easy.
 
