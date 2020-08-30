@@ -32,7 +32,7 @@ html:
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
 
 pdf:
-	rm -f _main.md
+	rm -f _main.md book-test.md
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
 
 else
