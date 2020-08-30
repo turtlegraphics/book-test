@@ -4,7 +4,7 @@
 #
 rmd_files: [
   "index.Rmd",
-  "preface.Rmd",
+  "00-preface.Rmd",
   "01-intro.Rmd",
   "02-literature.Rmd",
   "03-method.Rmd",

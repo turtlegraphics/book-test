@@ -1,0 +1,3 @@
+# Preface {-}
+
+This is a test book for Foundations of Statistics with R.  It's got all the bells and whistles of the big book without any of the content.

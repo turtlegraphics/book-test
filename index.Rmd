@@ -2,18 +2,15 @@
 #
 # Book Metadata
 #
-title: "Foundations of Statistics with R"
+title: "Bookdown Technical Demo"
 author: "Darrin Speegle and Bryan Clair"
 date: "`r Sys.Date()`"
 
    # description field is metadata in the html files that will show up on
    # facebook, twitter, and other social media.  It does not appear in the book text.
 description: >-
-   Foundations of Statistics With R by Speegle and Clair.
-   This textbook is ideal for a calculus based probability and statistics course
-   integrated with R.
-   It features probability throughsimulation, data manipulation and visualization,
-   and explorations of inference assumptions.
+   Bookdown Technical Demo by Speegle and Clair.
+   This has all the technical features of Foundations of Statistics with R without the content.
 
 site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 
