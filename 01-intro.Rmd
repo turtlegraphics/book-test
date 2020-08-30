@@ -21,4 +21,8 @@ knitr::kable(
 
 You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
 
-This book features music by Daft Punk\index{daft punk}
+After spending all day getting henna designs drawn, she noticed she had a foot note.[^henna]
+
+[^henna]: This joke (c) 2020 by Bryan Clair.
+
+This book features music by Daft Punk\index{daft punk} and poetry by Carl Sandburg\index{Sandburg, Carl}.

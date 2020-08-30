@@ -1,26 +1,35 @@
 # Methods
 
-This chapter uses `ggplot` [@R-ggplot2]
+We can define theorem, example, and other blocks using Pandoc's *fenced div* syntax:
 
-\index{ggplot}\index{quakes}
+::: theorem
+Random variables built from many independent events tend to be normal.
+:::
 
-After spending all day getting henna designs drawn, she noticed she had a foot note.[^henna]
+Here is a more important theorem:
 
-[^henna]: This joke (c) 2020 by Bryan Clair.
+::: {.theorem #Lyapunov}
+Suppose $\{X_1, \ldots, X_n\}$ is a sequence of independent random variables, each with finite expected value $\mu_i$ and variance $\sigma_i^2$.
+Define
+
+\[ s_n^2 = \sum_{i=1}^n \sigma_i^2 \]
+
+If for some $\delta > 0$, _Lyapunov’s condition_\index{Lyapunov's condition}
+
+\[ \lim_{n\to\infty} \frac{1}{s_{n}^{2+\delta}} \sum_{i=1}^{n} \operatorname{E}\left[|X_{i} - \mu_{i}|^{2+\delta}\right] = 0 \]
+
+is satisfied, then a sum of $\frac{X_i - \mu_i}{s_n}$ converges in distribution to a standard normal random variable, as $n$ goes to infinity:
+
+\[ \frac{1}{s_n} \sum_{i=1}^{n} \left(X_i - \mu_i\right) \ \xrightarrow{d}\ N(0,1).\]
+:::
+
+I would argue that Theorem \@ref(Lyapunov) is a really good theorem.  Thanks, Dr. Lyapunov.
+
+Here is the bookdown approach:
 
 ```{theorem}
-Theorem blocks don't work well.  Here is why:
-
-1. If you have a list
-2. At the end
-3. It breaks the latex.
-
-```
-
-Here is a plot:
-```{r}
-library(ggplot2)
-ggplot(quakes,aes(x=long,y=lat))+geom_point()
+We do not like this approach because it ruins the syntax highlighting in RStudio, cannot be nested or contain R code, and
+also has a nasty bug that causes it to break LaTeX output when the last thing in the theorem block is a list.
 ```
 
 ## Exercises {-}

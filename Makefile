@@ -32,6 +32,7 @@ html:
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
 
 pdf:
+	rm -f _main.md book-test.md
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
 
 else
@@ -40,6 +41,7 @@ outname = chapter-$(chapter)
 inname := $(shell ls $(chapter)-*.Rmd) # find chapter name by listing directory
 chapters = "['index.Rmd','$(inname)']"
 pdf: _bookdown_chapter.yml
+	rm -f _main.md
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book',config_file = '_bookdown_chapter.yml', output_file = '$(outname)')"
 
 html: _bookdown_chapter.yml
@@ -60,6 +62,6 @@ endif # end of single chapter build
 clean:
 	rm -f _main.md _main.rds _book/*.tex _book/*.pdf chapter-*.log chapter-*.pdf chapter-*.tex
 	rm -f bookdown*.bak
-	rm render*.rds
-	rm tmp-pdfcrop-*.tex
+	rm -f render*.rds
+	rm -f tmp-pdfcrop-*.tex
 
