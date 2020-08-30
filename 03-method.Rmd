@@ -63,3 +63,18 @@ Exercises @babycount - @jessie use the `babynames` data set from the `babynames`
     Approximately what range of years does each time period span?
 
 @assaults. Data scientist Kieran Healy created this widely circulated figure:
+```{r include=FALSE, cache=FALSE}
+# This script is set to run automatically at the end of each chapter
+# in the _bookdown.yml configuration file
+
+#
+# It automatically writes all packages to the end of the file "package-list.log"
+# which was first created in the index.Rmd file
+#
+packs <- .packages()
+if (!is.null(packs)) {
+  packfile <- file("package-list.log","a")
+  writeLines(packs,packfile)
+  close(packfile)
+}
+```
