@@ -1,11 +1,5 @@
 # Literature
-This chapter uses `dplyr`[@R-dplyr]
-\index{mtcars}\index{dplyr}
-
-```{r}
-library("dplyr")
-mtcars %>% group_by(factor(carb)) %>% summarize(mean(mpg))
-```
+Some text and exercises.
 
 ## The Wedding Procession of the Rag Doll and the Broom Handle and Who Was in It
 
