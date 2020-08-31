@@ -12,3 +12,56 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+body {
+  --chapternum: "?"; /* define a variable that maybe could be set in the html body tag with style='--chapternum:"X";' */
+  counter-reset: theorem-counter;
+  counter-reset: example-counter;
+}
+
+div.theorem {
+  counter-increment: theorem-counter;
+  border: 1px solid gray;
+  border-radius: 1em;
+  padding-left: 1em;
+  padding-top: 0.5em;
+}
+
+div.theorem::before {
+  content: "Theorem " var(--chapternum) "." counter(theorem-counter) ":";
+  font-weight: bold;
+}
+
+div.remark {
+  border-left: 1px solid gray;
+  padding-left: 1em;
+  margin-top: 0.5em;
+}
+div.remark::before {
+  content: "Remark:";
+  font-style: italic;
+}
+
+div.example {
+  counter-increment: example-counter;
+}
+div.example::before {
+  content: "Example " var(--chapternum) "." counter(example-counter) ":";
+  font-weight: bold;
+}
+
+div.definition {
+  counter-increment: example-counter;
+}
+div.definition::before {
+  content: "Definition " var(--chapternum) "." counter(example-counter) ":";
+  font-weight: bold;
+}
+
+div.proof::before {
+  content: "Proof:";
+  font-style: italic;
+}
+div.proof::after {
+  content: "\2610"; /* square box QED */
+}
