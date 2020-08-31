@@ -4,6 +4,8 @@ We can define theorem, example, and other blocks using Pandoc's *fenced div* syn
 
 ## Block structures
 
+The syntax for a block is:
+
 ~~~
 ::: theorem
 Random variables built from many independent events tend to be normal.
