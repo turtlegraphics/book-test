@@ -54,7 +54,7 @@ Nice!
 Here is a more important theorem, so it's labeled for references using this syntax:
 
 ~~~
-::: {.theorem #Lyapunov}
+::: {.theorem #thm:Lyapunov}
 content of theorem
 :::
 ~~~
