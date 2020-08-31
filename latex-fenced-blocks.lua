@@ -1,6 +1,6 @@
 --[[
      A Pandoc 2 lua filter converting Pandoc native divs to LaTeX environments
-     Author: Romain Lesur, Christophe Dervieux, and Yihui Xie
+     Author: Bryan Clair, Romain Lesur, Christophe Dervieux, and Yihui Xie
      License: Public domain
 --]]
 
@@ -17,20 +17,24 @@ Div = function (div)
   end
 
   local env = div.classes[1]
-  local label = div.identifier
 
   -- if the div has no class, the object is left unchanged
   if not env then return nil end
 
-  -- insert raw latex before content
-  local begintxt = '\\begin{' .. env .. '}'
+  -- build begin text and optional label
+  local begintxt = '\\begin{' .. env .. '}' .. (options or "")
+
+  local label = div.identifier
   if label ~= '' then
     begintxt = begintxt .. '\\label{' .. label .. '}'
+    -- don't let the identifier escape to become a double label
+    div.identifier = ''
   end
 
+  -- insert raw latex before content
   table.insert(
     div.content, 1,
-    pandoc.RawBlock('tex', begintxt .. (options or ""))
+    pandoc.RawBlock('tex', begintxt)
   )
   -- insert raw latex after content
   table.insert(
