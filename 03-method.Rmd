@@ -22,7 +22,10 @@ As soon as the last one of those is eradicated, you need to put the `\newtheorem
 into the `preamble.tex` file yourself, as you can see in this book's `preamble.tex`.
 
 ::: theorem
-Binomial variables are approximately normal
+Binomial variables are approximately normal.  That's cool because:
+
+1. Normal variables are easy
+2. Discrete things are hard
 :::
 
 ::: remark
