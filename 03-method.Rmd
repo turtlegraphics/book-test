@@ -25,12 +25,15 @@ is satisfied, then a sum of $\frac{X_i - \mu_i}{s_n}$ converges in distribution 
 
 I would argue that Theorem \@ref(Lyapunov) is a really good theorem.  Thanks, Dr. Lyapunov.
 
-Here is the bookdown approach:
+::: theorem
+Using fenced divs is superior to the bookdown approach.
+:::
 
-```{theorem}
-We do not like this approach because it ruins the syntax highlighting in RStudio, cannot be nested or contain R code, and
+::: proof
+We do not like the bookdown approach using code blocks because it ruins the syntax highlighting in RStudio, cannot be nested or contain R code, and
 also has a nasty bug that causes it to break LaTeX output when the last thing in the theorem block is a list.
-```
+:::
+
 
 ## Exercises {-}
 @doubles.

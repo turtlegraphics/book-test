@@ -2,22 +2,34 @@
 
 Please answer question @easy.  Question @easy should be and easy warmup for question @skills. Answer question @skills before trying question @hard.  Question @impossible doesn't actually exist.
 
+::: example
+This is an example.
+:::
 
-Watch out for bookdown\index{bookdown} blocks (theorem, definition, etc.) that end with an enumerated list,
-because if you don't terminate the list the LaTeX\index{LaTeX} code will break.
+::: example
+Another example.
+:::
 
-
-```{definition}
+::: definition
 Let $A$ and $B$ be events in a sample space $S$. 
 
 1. $A \cap B$ is the set of outcomes that are in  *both* $A$ and $B$.
 2. $A \cup B$ is the set of outcomes that are in *either* $A$ or $B$ (or both).
 3. $\overline{A}$ is the set of outcomes that are *not* in $A$ (but are in $S$). 
 4. $A \setminus B$ is the set of outcomes that are in $A$ and not in $B$.
+:::
 
-```
+::: example
+Third example.
+:::
+
+::: definition
+I like my TVs to have high definition.
+:::
 
 Now you're ready for questions @easy and @skills, but probably need to study more before working question @hard.
+
+You might refer back to Theorem \ref{Lyapunov} if you want to learn.
 
 ## Exercises {-}
 
@@ -30,3 +42,33 @@ Questions @hard and @impossible are harder.
 @skills. Show $\overline{\overline{(A+B)}+C} = A \cap \overline{C} + B \cap \overline{C}$
 
 @hard. Given a formula $F(A_1,\dotsc,A_n)$ made from $\cup$,$\cap$, and set complement, find events $A_1,\cdots,A_n$ so that the set $F(A_1,\dotsc,A_n)$ is nonempty.
+```{r include=FALSE, cache=FALSE}
+# This script is set to run automatically at the end of each chapter
+# in the _bookdown.yml configuration file
+
+#
+# It automatically writes all packages to the end of the file "package-list.log"
+# which was first created in the index.Rmd file
+#
+packs <- .packages()
+if (!is.null(packs)) {
+  packfile <- file("package-list.log","a")
+  writeLines(packs,packfile)
+  close(packfile)
+}
+```
+```{r include=FALSE, cache=FALSE}
+# This script is set to run automatically at the end of each chapter
+# in the _bookdown.yml configuration file
+
+#
+# It automatically writes all packages to the end of the file "package-list.log"
+# which was first created in the index.Rmd file
+#
+packs <- .packages()
+if (!is.null(packs)) {
+  packfile <- file("package-list.log","a")
+  writeLines(packs,packfile)
+  close(packfile)
+}
+```
