@@ -1,14 +1,62 @@
 # Methods
 
-We can define theorem, example, and other blocks using Pandoc's *fenced div* syntax:
+We can define theorem, example, and other blocks using Pandoc's *fenced div* syntax.
+
+## Block structures
+
+~~~
+::: theorem
+Random variables built from many independent events tend to be normal.
+:::
+~~~
+
+Which becomes:
 
 ::: theorem
 Random variables built from many independent events tend to be normal.
 :::
 
-Here is a more important theorem:
+Note that the various `\newtheorem` commands get put into the LaTeX preamble automatically
+as long as your markdown document has one of bookdown's code block theorem-like structures.
+As soon as the last one of those is eradicated, you need to put the `\newtheorem` definitions
+into the `preamble.tex` file yourself, as you can see in this book's `preamble.tex`.
 
+::: theorem
+Binomial variables are approximately normal
+:::
+
+::: remark
+By default, remarks are not numbered
+:::
+
+::: example
+Examples and definitions are numbered together
+:::
+
+::: definition
+This follows from the last example.
+:::
+
+::: example
+This example contains an R block.
+```{r}
+1:10
+```
+:::
+
+Nice!
+
+Here is a more important theorem, so it's labeled for references using this syntax:
+
+~~~
 ::: {.theorem #Lyapunov}
+content of theorem
+:::
+~~~
+
+Which looks the same, but is labeled.  
+
+::: {.theorem #thm:Lyapunov}
 Suppose $\{X_1, \ldots, X_n\}$ is a sequence of independent random variables, each with finite expected value $\mu_i$ and variance $\sigma_i^2$.
 Define
 
@@ -23,17 +71,25 @@ is satisfied, then a sum of $\frac{X_i - \mu_i}{s_n}$ converges in distribution 
 \[ \frac{1}{s_n} \sum_{i=1}^{n} \left(X_i - \mu_i\right) \ \xrightarrow{d}\ N(0,1).\]
 :::
 
-I would argue that Theorem \@ref(Lyapunov) is a really good theorem.  Thanks, Dr. Lyapunov.
+## Referencing
+
+You can reference theorem-like environments with ```\@ref(thm:Lyapunov)```. 
+
+I would argue that Theorem \@ref(thm:Lyapunov) is a really good theorem.  Thanks, Dr. Lyapunov.
+
+You can also reference across chapters. See Chapter \@ref(summary) for a link back to Lyapunov's theorem.
+
+## Conclusion
+
+The conclusion of this chapter also demonstrates the use of the `proof` environment:
 
 ::: theorem
-Using fenced divs is superior to the bookdown approach.
+Using fenced divs is superior to the block approach.
 :::
 
 ::: proof
-We do not like the bookdown approach using code blocks because it ruins the syntax highlighting in RStudio, cannot be nested or contain R code, and
-also has a nasty bug that causes it to break LaTeX output when the last thing in the theorem block is a list.
+We prefer these fenced divs to the existing approach using code blocks.  Code blocks ruin the syntax highlighting in RStudio, cannot be nested or contain R code, and also have a nasty bug that breaks LaTeX output when the last thing in the theorem block is a list.
 :::
-
 
 ## Exercises {-}
 @doubles.

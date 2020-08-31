@@ -1,5 +1,5 @@
 # Literature
-Some text and exercises.
+Some text and exercises, and a demonstration vignette.
 
 ## The Wedding Procession of the Rag Doll and the Broom Handle and Who Was in It
 
