@@ -1,7 +1,7 @@
 bookdown::gitbook:
+  css: style.css
   pandoc_args:
     - --lua-filter=fenced-blocks-html.lua
-  css: style.css
   config:
     toc:
       before: |
