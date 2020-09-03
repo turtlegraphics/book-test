@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  pandoc_args:
+    - --lua-filter=fenced-blocks-html.lua
   css: style.css
   config:
     toc:
@@ -15,5 +17,5 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
   pandoc_args:
-    - --lua-filter=latex-fenced-blocks.lua
+    - --lua-filter=fenced-blocks-latex.lua
 bookdown::epub_book: default
