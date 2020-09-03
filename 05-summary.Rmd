@@ -29,7 +29,7 @@ I like my TVs to have high definition.
 
 Now you're ready for questions @easy and @skills, but probably need to study more before working question @hard.
 
-You might refer back to Theorem \ref{thm:Lyapunov} if you want to learn.
+You might refer back to Theorem \@ref(thm:Lyapunov) if you want to learn.
 
 ## Exercises {-}
 
