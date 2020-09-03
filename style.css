@@ -15,19 +15,17 @@ pre code {
 
 body {
   --chapternum: "?"; /* define a variable that maybe could be set in the html body tag with style='--chapternum:"X";' */
-  counter-reset: theorem-counter;
-  counter-reset: example-counter;
+  counter-reset: example-counter theorem-counter;
 }
 
 div.theorem {
-  counter-increment: theorem-counter;
   border: 1px solid gray;
   border-radius: 1em;
   padding-left: 1em;
   padding-top: 0.5em;
 }
-
 div.theorem::before {
+  counter-increment: theorem-counter;
   content: "Theorem " var(--chapternum) "." counter(theorem-counter) ":";
   font-weight: bold;
 }
@@ -42,18 +40,14 @@ div.remark::before {
   font-style: italic;
 }
 
-div.example {
-  counter-increment: example-counter;
-}
 div.example::before {
+  counter-increment: example-counter;
   content: "Example " var(--chapternum) "." counter(example-counter) ":";
   font-weight: bold;
 }
 
-div.definition {
-  counter-increment: example-counter;
-}
 div.definition::before {
+  counter-increment: example-counter;
   content: "Definition " var(--chapternum) "." counter(example-counter) ":";
   font-weight: bold;
 }
