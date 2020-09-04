@@ -10,6 +10,10 @@ This is an example.
 Another example.
 :::
 
+::: theorem
+A theorem.
+:::
+
 ::: definition
 Let $A$ and $B$ be events in a sample space $S$. 
 
