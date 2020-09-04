@@ -14,8 +14,8 @@ pre code {
 }
 
 body {
-  --chapternum: "?"; /* define a variable that maybe could be set in the html body tag with style='--chapternum:"X";' */
   counter-reset: example-counter theorem-counter;
+  --chapternum: "X"; /* define a variable that maybe could be set in the html body tag with style='--chapternum:"X";' */
 }
 
 div.theorem {
