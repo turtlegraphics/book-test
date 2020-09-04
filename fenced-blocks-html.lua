@@ -8,13 +8,17 @@
 counters = {}
 -- labels: each labeled block lives here
 labels = {}
+-- chapter counter and current chapter string
+chapter = 0
+cur_chapter = "??"
 
--- this function finds fenced divs, assigns a number,
--- and associates that number with the div's identifier
-get_fenced_div_labels = function (div)
+-- handle_fenced_div
+--   assign a number
+--   associate that number with the div's identifier
+handle_fenced_div = function (div)
   local env = div.classes[1]
   
-  -- if the div has no class, the object is left unchanged
+  -- if the div has no class, we're not interested
   if not env then return nil end
 
   -- increment counter for this class
@@ -27,11 +31,43 @@ get_fenced_div_labels = function (div)
   -- handle labeled blocks
   local label = div.identifier
   if label ~= '' then
-    -- store for later reference (NEED TO CHECK FOR DUPLICATES HERE)
-    labels[label] = counters[env]
+    if labels[label] then
+      io.stderr:write("Duplicate fenced block label: " .. label .. "\n")
+    end
+    labels[label] = cur_chapter .. "." .. tostring(counters[env])
   end
+end
 
-  return div
+-- new_chapter
+--   increment chapter counter (carefully)
+--   reset fenced div counters
+function new_chapter(el)
+  -- check if this is a numbered chapter
+  local numbered = true
+  for i,c in ipairs(el.classes) do
+    if c == "unnumbered" then numbered = false end 
+  end
+  
+  -- set the current chapter label prefix
+  if numbered then
+    chapter = chapter + 1
+    cur_chapter = tostring(chapter)
+  else
+    -- use first character of identifier as the chapter value
+    cur_chapter = el.identifier:sub(1,1):upper()
+  end
+  
+  -- reset all counters
+  counters = {}
+end
+
+-- Called on all Block elements, dispatch as appropriate
+function block_dispatch(el)
+  if el.t == "Header" and el.level == 1 then
+    new_chapter(el)
+  elseif el.t == "Div" then
+    handle_fenced_div(el)
+  end
 end
 
 -- this function finds @ref(label) references and replaces
@@ -47,5 +83,6 @@ fixrefs = function (elem)
   end
 end
 
--- returning in this order means that the labels get built before the reference handler
-return {{ Div = get_fenced_div_labels } , { Str = fixrefs }}
+-- returning in this order means that the labels get resolved
+-- before the reference handler replaces them
+return {{ Block = block_dispatch } , { Str = fixrefs }}
