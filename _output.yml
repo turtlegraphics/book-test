@@ -1,7 +1,7 @@
 bookdown::gitbook:
   css: style.css
   pandoc_args:
-    - --lua-filter=fenced-blocks-html.lua
+    - --lua-filter=fenced-blocks.lua
   config:
     toc:
       before: |
@@ -16,6 +16,4 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-  pandoc_args:
-    - --lua-filter=fenced-blocks-latex.lua
 bookdown::epub_book: default

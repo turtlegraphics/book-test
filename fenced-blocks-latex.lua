@@ -21,9 +21,14 @@ Div = function (div)
   -- if the div has no class, the object is left unchanged
   if not env then return nil end
 
-  -- build begin text and optional label
-  local begintxt = '\\begin{' .. env .. '}' .. (options or "")
-
+  -- build begin text
+  local begintxt = '\\begin{' .. env .. '}'
+  
+  local data = div.attributes['data-latex'] or div.attributes['data']
+  if data then
+    begintxt = begintxt .. '[' .. data .. ']'
+  end
+  
   local label = div.identifier
   if label ~= '' then
     begintxt = begintxt .. '\\label{' .. label .. '}'
@@ -31,12 +36,11 @@ Div = function (div)
     div.identifier = ''
   end
 
-  -- insert raw latex before content
+  -- insert text before and after content
   table.insert(
     div.content, 1,
     pandoc.RawBlock('tex', begintxt)
   )
-  -- insert raw latex after content
   table.insert(
     div.content,
     pandoc.RawBlock('tex', '\\end{' .. env .. '}')

@@ -54,7 +54,7 @@ divstyle = {
 }
 
 --[[
-GLOBALS
+HTML GLOBALS
 
 --]]
 
@@ -67,7 +67,7 @@ chapter = 0
 cur_chapter = "??"
 
 --[[
-METHODS
+HTML METHODS
 
 --]]
 
@@ -188,9 +188,57 @@ fixrefs = function (elem)
 end
 
 --[[
+LATEX METHODS
+
+--]]
+latex_div = function (div)
+  local env = div.classes[1]
+
+  -- if the div has no class, the object is left unchanged
+  if not env then return nil end
+
+  -- build begin text
+  local begintxt = '\\begin{' .. env .. '}'
+  
+  local data = div.attributes['data-latex'] or div.attributes['data']
+  if data then
+    begintxt = begintxt .. '[' .. data .. ']'
+  end
+  
+  local label = div.identifier
+  if label ~= '' then
+    begintxt = begintxt .. '\\label{' .. label .. '}'
+    -- don't let the identifier escape to become a double label
+    div.identifier = ''
+  end
+
+  -- insert text before and after content
+  table.insert(
+    div.content, 1,
+    pandoc.RawBlock('tex', begintxt)
+  )
+  table.insert(
+    div.content,
+    pandoc.RawBlock('tex', '\\end{' .. env .. '}')
+  )
+  return div
+end
+
+--[[
 FILTER
 
 --]]
--- returning in this order means that the labels get resolved
--- before the reference handler replaces them
-return {{ Block = block_dispatch } , { Str = fixrefs }}
+
+io.stderr:write("Format: " .. FORMAT .. "\n")
+
+
+if FORMAT == "latex" or FORMAT == "beamer" then
+  return {{ Div = latex_div }}
+elseif FORMAT == "gitbook" or FORMAT == "html" or FORMAT == "html4" then
+  -- returning in this order means that the labels get resolved
+  -- before the reference handler replaces them
+  return {{ Block = block_dispatch } , { Str = fixrefs }}
+else
+  return nil
+end
+
