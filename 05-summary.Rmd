@@ -1,6 +1,6 @@
 # Final Words {#summary}
 
-Please answer question @easy.  Question @easy should be and easy warmup for question @skills. Answer question @skills before trying question @hard.  Question @impossible doesn't actually exist.
+Please answer question \@ref(ex:easy).  Question \@ref(ex:easy) should be and easy warmup for question \@ref(ex:skills). Answer question \@ref(ex:skills) before trying question \@ref(ex:hard).  Question \@ref(ex:impossible) doesn't actually exist.
 
 ::: example
 This is an example.
@@ -31,7 +31,7 @@ Third example.
 I like my TVs to have high definition.
 :::
 
-Now you're ready for questions @easy and @skills, but probably need to study more before working question @hard.
+Now you're ready for questions \@ref(ex:easy) and \@ref(ex:skills), but probably need to study more before working question \@ref(ex:hard).
 
 You might refer back to Theorem \@ref(thm:Lyapunov) if you want to learn.
 
