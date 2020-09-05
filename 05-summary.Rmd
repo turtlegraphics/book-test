@@ -37,42 +37,18 @@ You might refer back to Theorem \@ref(thm:Lyapunov) if you want to learn.
 
 ## Exercises {-}
 
-Question @easy is easy.
+Question \@ref(ex:easy) is easy.
 
-@easy. What is $S$?
+::: {.exercise #ex:easy}
+What is $S$?
+:::
 
-Questions @hard and @impossible are harder.
+Questions \@ref(ex:hard) and \@ref(ex:impossible) are harder.
 
-@skills. Show $\overline{\overline{(A+B)}+C} = A \cap \overline{C} + B \cap \overline{C}$
+::: {.exercise #ex:skills}
+Show $\overline{\overline{(A+B)}+C} = A \cap \overline{C} + B \cap \overline{C}$
+:::
 
-@hard. Given a formula $F(A_1,\dotsc,A_n)$ made from $\cup$,$\cap$, and set complement, find events $A_1,\cdots,A_n$ so that the set $F(A_1,\dotsc,A_n)$ is nonempty.
-```{r include=FALSE, cache=FALSE}
-# This script is set to run automatically at the end of each chapter
-# in the _bookdown.yml configuration file
-
-#
-# It automatically writes all packages to the end of the file "package-list.log"
-# which was first created in the index.Rmd file
-#
-packs <- .packages()
-if (!is.null(packs)) {
-  packfile <- file("package-list.log","a")
-  writeLines(packs,packfile)
-  close(packfile)
-}
-```
-```{r include=FALSE, cache=FALSE}
-# This script is set to run automatically at the end of each chapter
-# in the _bookdown.yml configuration file
-
-#
-# It automatically writes all packages to the end of the file "package-list.log"
-# which was first created in the index.Rmd file
-#
-packs <- .packages()
-if (!is.null(packs)) {
-  packfile <- file("package-list.log","a")
-  writeLines(packs,packfile)
-  close(packfile)
-}
-```
+::: {.exercise #ex:hard}
+Given a formula $F(A_1,\dotsc,A_n)$ made from $\cup$,$\cap$, and set complement, find events $A_1,\cdots,A_n$ so that the set $F(A_1,\dotsc,A_n)$ is nonempty.
+:::
