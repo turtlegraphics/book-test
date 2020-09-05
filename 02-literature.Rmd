@@ -58,18 +58,3 @@ c. Wiggled something  __________________________
 d. Had chocolate on the end of their noses __________________________
 e. Laughed as they looked around _________________________
 :::
-```{r include=FALSE, cache=FALSE}
-# This script is set to run automatically at the end of each chapter
-# in the _bookdown.yml configuration file
-
-#
-# It automatically writes all packages to the end of the file "package-list.log"
-# which was first created in the index.Rmd file
-#
-packs <- .packages()
-if (!is.null(packs)) {
-  packfile <- file("package-list.log","a")
-  writeLines(packs,packfile)
-  close(packfile)
-}
-```
