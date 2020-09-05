@@ -23,6 +23,10 @@ as long as your markdown document has one of bookdown's code block theorem-like 
 As soon as the last one of those is eradicated, you need to put the `\newtheorem` definitions
 into the `preamble.tex` file yourself, as you can see in this book's `preamble.tex`.
 
+::: theorem*
+An unnumbered theorem.
+:::
+
 ::: theorem
 Binomial variables are approximately normal.  That's cool because:
 

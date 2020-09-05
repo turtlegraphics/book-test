@@ -32,6 +32,10 @@ You can customize the theorem name for latex with data-latex or for html with da
 This theorem has different names depending on output.
 :::
 
+::: theorem*
+All classes have unnumbered * variants built-in.
+:::
+
 --]]
 
 --[[
@@ -82,6 +86,17 @@ handle_fenced_div = function (div)
   -- if the div has no class, we're not interested
   if not env then return nil end
 
+  io.stderr:write("Handling:" .. env .. "\n")
+
+  -- check for unnumbered * variants
+  local starred = false
+  if env:match("*$") then
+    starred = true
+    env = env:sub(1, #env - 1)
+    div.classes[1] = env
+    io.stderr:write("   Changed to:" .. env .. "\n")
+  end
+  
   -- setup style from divstyle or as defaults
   if not divstyle[env] then
     divstyle[env] = {} -- use defaults
@@ -97,6 +112,7 @@ handle_fenced_div = function (div)
   if divstyle[env].numbered ~= nil then
     numbered = divstyle[env].numbered
   end
+  if starred then numbered = false end
 
   -- calculate numbering string for this env
   local number = ""
@@ -178,10 +194,11 @@ end
 -- this function finds @ref(label) references and replaces
 -- them with the appropriate number and a link to the block
 fixrefs = function (elem)
-  reflabel = elem.text:match "@ref%((.-)%)"
+  reflabel, trailing = elem.text:match "@ref%((.-)%)(.*)"
   if reflabel and labels[reflabel] then
     local link = '<a href="#' .. reflabel .. '">'
     link = link .. labels[reflabel] .. '</a>'
+    link = link .. trailing
     return pandoc.RawInline("html", link)
   else
     return elem
