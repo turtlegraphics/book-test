@@ -7,7 +7,7 @@ rmd_files: [
   "00-preface.Rmd",
   "01-intro.Rmd",
   "02-literature.Rmd",
-  "03-method.Rmd",
+  "03-theorems.Rmd",
   "04-application.Rmd",
   "05-summary.Rmd",
   "06-references.Rmd"

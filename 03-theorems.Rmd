@@ -132,7 +132,6 @@ Run on the spot, bringing your knees as high as possible.
 :::
 
 ::: {.exercise #ex:lasthiit}
-
 a. Work 20 seconds.
 b. Rest 10 seconds.
 :::
