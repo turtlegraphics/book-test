@@ -1,27 +1,72 @@
 --[[
-     A Pandoc 2 lua filter converting Pandoc native divs to html environments
+     A Pandoc 2 lua filter converting Pandoc native divs to amsthm style numbered environments.
      Author: Bryan Clair
      License: Public domain
+     
+     For LaTeX output, things are fairly simple since the amsthm package handles
+     all the numbering and cross referencing.
+     
+     For HTML output, the numbering and cross referencing are done in this filter,
+     and those numbers are placed into the HTML output as static values.
 --]]
 
--- SETTINGS
----- this really should be handled in the YAML in bookdown so it can be customized
+--[[
+USAGE
+
+::: example
+This is a fenced example div that will be numbered.
+:::
+
+::: {.example #refname data="Important Example"}
+This is an important example that can be referenced.
+:::
+
+::: {.theorem data="R is complete" data-latex="$\mathbb{R} is complete"}
+You can customize the theorem name for latex with data-latex or for html with data-html.
+:::
+
+::: {.theorem data-html="2&pi; Theorem" data-latex="$2\pi$ Theorem"}
+This theorem has different names depending on output.
+:::
+
+--]]
+
+--[[
+SETTINGS
+
+In LaTeX, this setup is handled by amsthm definitions in the preamble.
+Since those are currently hardcoded into bookdown, they cannot be changed by this filter.
+The settings below match the hardcoded LaTeX settings for html output.
+
+Ideally, these settings should come from the YAML for the source document,
+and generate the appropriate LaTeX setup as well.
+
+--]]
+
 divstyle = {
   remark = { numbered = false, style = "remark" },
   definition = { style = "definition"},
   example = { sequence = "definition", style = "definition"},
-  proof = { numbered = false, style = "remark" }
+  proof = { numbered = false, style = "remark", name = "Proof:" }
 }
 
--- GLOBALS
+--[[
+GLOBALS
+
+--]]
+
 -- counters: one counter for each class of fenced block
 counters = {}
--- labels: each labeled block lives here
+-- labels: each labeled block's reference number is stored here
 labels = {}
 -- chapter counter and current chapter string
 chapter = 0
 cur_chapter = "??"
 
+--[[
+METHODS
+
+--]]
 
 -- handle_fenced_div
 --   assign a number
@@ -33,29 +78,32 @@ handle_fenced_div = function (div)
   -- if the div has no class, we're not interested
   if not env then return nil end
 
-  -- setup divstyle
+  -- setup style from divstyle or as defaults
   if not divstyle[env] then
     divstyle[env] = {} -- use defaults
   end
-  style = divstyle[env].style or "plain"
-  sequence = divstyle[env].sequence or env
-  numbered = true
+
+  local name = divstyle[env].name or env:gsub("^%l", string.upper)
+
+  local style = divstyle[env].style or "plain"
+
+  local sequence = divstyle[env].sequence or env
+
+  local numbered = true  -- the 'or' idiom fails for booleans
   if divstyle[env].numbered ~= nil then
     numbered = divstyle[env].numbered
   end
 
-  -- increment counter for this env
-  if counters[sequence] then
-    counters[sequence] = counters[sequence] + 1
-  else
-    counters[sequence] = 1
-  end
-
   -- calculate numbering string for this env
+  local number = ""
   if numbered then
-    env_number = cur_chapter .. "." .. tostring(counters[sequence])
-  else
-    env_number = ""
+    -- increment counter for this numbering sequence
+    if counters[sequence] then
+      counters[sequence] = counters[sequence] + 1
+    else
+      counters[sequence] = 1
+    end
+    number = cur_chapter .. "." .. tostring(counters[sequence])
   end
 
   -- set label in dictionary if there is a label
@@ -64,21 +112,29 @@ handle_fenced_div = function (div)
     if labels[label] then
       io.stderr:write("Duplicate fenced block label: " .. label .. "\n")
     end
-    labels[label] = env_number
+    labels[label] = number
   end
   
   -- insert begin text before content
-  begintxt = string.format(
+  local begintxt = string.format(
     '<span class="divhead-%s %s-before">%s %s</span>',
-    style,  -- divhead class plain, definition, remark, etc.
-    env,    -- class for customization of this env's style
-    env:gsub("^%l", string.upper),  -- display class with uppercase first letter
-    env_number  -- display number
+    style,      -- css class divhead-plain, divhead-definition, divhead-remark, etc.
+    env,        -- css class env-before for customization of this env's style
+    name,       -- display name
+    number  -- display number
   )
   table.insert(
     div.content, 1,
     pandoc.RawBlock('html', begintxt)
   )
+  local parentxt = div.attributes["data-html"] or div.attributes["data"]
+  if parentxt then
+    table.insert(
+      div.content, 2,
+      pandoc.RawBlock('html', "(" .. parentxt .. ")")
+    )
+  end
+
   return div
 end
 
@@ -101,7 +157,7 @@ function new_chapter(el)
     cur_chapter = el.identifier:sub(1,1):upper()
   end
   
-  -- reset all counters
+  -- reset all env counters
   counters = {}
   return nil
 end
@@ -128,6 +184,10 @@ fixrefs = function (elem)
   end
 end
 
+--[[
+FILTER
+
+--]]
 -- returning in this order means that the labels get resolved
 -- before the reference handler replaces them
 return {{ Block = block_dispatch } , { Str = fixrefs }}
