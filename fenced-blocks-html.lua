@@ -4,6 +4,16 @@
      License: Public domain
 --]]
 
+-- SETTINGS
+---- this really should be handled in the YAML in bookdown so it can be customized
+divstyle = {
+  remark = { numbered = false, style = "remark" },
+  definition = { style = "definition"},
+  example = { sequence = "definition", style = "definition"},
+  proof = { numbered = false, style = "remark" }
+}
+
+-- GLOBALS
 -- counters: one counter for each class of fenced block
 counters = {}
 -- labels: each labeled block lives here
@@ -12,30 +22,64 @@ labels = {}
 chapter = 0
 cur_chapter = "??"
 
+
 -- handle_fenced_div
 --   assign a number
 --   associate that number with the div's identifier
+--   insert heading text
 handle_fenced_div = function (div)
   local env = div.classes[1]
   
   -- if the div has no class, we're not interested
   if not env then return nil end
 
-  -- increment counter for this class
-  if counters[env] then
-    counters[env] = counters[env] + 1
-  else
-    counters[env] = 1
+  -- setup divstyle
+  if not divstyle[env] then
+    divstyle[env] = {} -- use defaults
+  end
+  style = divstyle[env].style or "plain"
+  sequence = divstyle[env].sequence or env
+  numbered = true
+  if divstyle[env].numbered ~= nil then
+    numbered = divstyle[env].numbered
   end
 
-  -- handle labeled blocks
+  -- increment counter for this env
+  if counters[sequence] then
+    counters[sequence] = counters[sequence] + 1
+  else
+    counters[sequence] = 1
+  end
+
+  -- calculate numbering string for this env
+  if numbered then
+    env_number = cur_chapter .. "." .. tostring(counters[sequence])
+  else
+    env_number = ""
+  end
+
+  -- set label in dictionary if there is a label
   local label = div.identifier
   if label ~= '' then
     if labels[label] then
       io.stderr:write("Duplicate fenced block label: " .. label .. "\n")
     end
-    labels[label] = cur_chapter .. "." .. tostring(counters[env])
+    labels[label] = env_number
   end
+  
+  -- insert begin text before content
+  begintxt = string.format(
+    '<span class="divhead-%s %s-before">%s %s</span>',
+    style,  -- divhead class plain, definition, remark, etc.
+    env,    -- class for customization of this env's style
+    env:gsub("^%l", string.upper),  -- display class with uppercase first letter
+    env_number  -- display number
+  )
+  table.insert(
+    div.content, 1,
+    pandoc.RawBlock('html', begintxt)
+  )
+  return div
 end
 
 -- new_chapter
@@ -59,14 +103,15 @@ function new_chapter(el)
   
   -- reset all counters
   counters = {}
+  return nil
 end
 
 -- Called on all Block elements, dispatch as appropriate
 function block_dispatch(el)
   if el.t == "Header" and el.level == 1 then
-    new_chapter(el)
+    return new_chapter(el)
   elseif el.t == "Div" then
-    handle_fenced_div(el)
+    return handle_fenced_div(el)
   end
 end
 

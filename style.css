@@ -1,3 +1,4 @@
+/* default bookdown css */
 p.caption {
   color: #777;
   margin-top: 10px;
@@ -13,49 +14,36 @@ pre code {
   white-space: inherit;
 }
 
-body {
-  counter-reset: example-counter theorem-counter;
-  --chapternum: "X"; /* define a variable that maybe could be set in the html body tag with style='--chapternum:"X";' */
+/* default css for fenced-blocks mod */
+span.divhead-plain {
+  font-weight: bold;
+  font-style: normal;
 }
 
+span.divhead-definition {
+  font-weight: bold;
+  font-style: normal;
+}
+
+span.divhead-remark {
+  font-weight: normal;
+  font-style: italic;
+}
+
+div.proof::after {
+  content: "\2610"; /* square box QED */
+}
+
+/* custom css for our book */
 div.theorem {
   border: 1px solid gray;
   border-radius: 1em;
   padding-left: 1em;
   padding-top: 0.5em;
 }
-div.theorem::before {
-  counter-increment: theorem-counter;
-  content: "Theorem " var(--chapternum) "." counter(theorem-counter) ":";
-  font-weight: bold;
-}
 
 div.remark {
   border-left: 1px solid gray;
   padding-left: 1em;
   margin-top: 0.5em;
-}
-div.remark::before {
-  content: "Remark:";
-  font-style: italic;
-}
-
-div.example::before {
-  counter-increment: example-counter;
-  content: "Example " var(--chapternum) "." counter(example-counter) ":";
-  font-weight: bold;
-}
-
-div.definition::before {
-  counter-increment: example-counter;
-  content: "Definition " var(--chapternum) "." counter(example-counter) ":";
-  font-weight: bold;
-}
-
-div.proof::before {
-  content: "Proof:";
-  font-style: italic;
-}
-div.proof::after {
-  content: "\2610"; /* square box QED */
 }
