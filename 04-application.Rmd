@@ -19,17 +19,24 @@ The mean of $n$ observations of a random variable $X$ converges to the expected 
 
 ## Exercises {-}
 
-@work. Work it\index{daft punk!work it}
+::: {.exercise #ex:work}
+Work it\index{daft punk!work it}
+:::
 
-@make. Make it\index{daft punk!make it}
+::: {.exercise #ex:make}
+Make it\index{daft punk!make it}
+:::
 
-@do. Do it\index{daft punk!do it}
+::: {.exercise #ex:do}
+Do it\index{daft punk!do it}
+:::
 
 Now what happens?
 
-@us. Makes us
+::: {.exercise #ex:us}
+Makes us
+:::
 
-@better. Harder, better, faster, stronger.
-
-```{r child = 'solutions/solutions-04.Rmd', eval={{includeSolutions}}}
-```
+::: {.exercise #ex:better}
+Harder, better, faster, stronger.
+:::

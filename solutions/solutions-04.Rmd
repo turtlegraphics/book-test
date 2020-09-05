@@ -1,11 +1,11 @@
-## Solutions {-}
+## Chapter 4 {-}
 
-S @work. Work it harder
+\@ref(ex:work). Work it harder
 
-S @make. Make it better
+\@ref(ex:make). Make it better
 
-S @do. Do it faster
+\@ref(ex:do). Do it faster
 
-S @us. Makes us stronger.
+\@ref(ex:us). Makes us stronger.
 
-S @better. Our work is never over.
+\@ref(ex:better). Our work is never over.

@@ -1,0 +1,4 @@
+# Solutions Manual {-}
+
+```{r child = 'solutions/solutions-04.Rmd'}
+```
