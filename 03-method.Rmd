@@ -54,14 +54,14 @@ Nice!
 Here is a more important theorem, so it's labeled for references using this syntax:
 
 ~~~
-::: {.theorem #thm:Lyapunov}
+::: {.theorem #thm:Lyapunov data="Lyapunov's Central Limit Theorem"}
 content of theorem
 :::
 ~~~
 
-Which looks the same, but is labeled.  
+Which looks the same, but is labeled for later reference and which has a name.
 
-::: {.theorem #thm:Lyapunov}
+::: {.theorem #thm:Lyapunov data="Lyapunov's Central Limit Theorem"}
 Suppose $\{X_1, \ldots, X_n\}$ is a sequence of independent random variables, each with finite expected value $\mu_i$ and variance $\sigma_i^2$.
 Define
 
@@ -74,6 +74,16 @@ If for some $\delta > 0$, _Lyapunov’s condition_\index{Lyapunov's condition}
 is satisfied, then a sum of $\frac{X_i - \mu_i}{s_n}$ converges in distribution to a standard normal random variable, as $n$ goes to infinity:
 
 \[ \frac{1}{s_n} \sum_{i=1}^{n} \left(X_i - \mu_i\right) \ \xrightarrow{d}\ N(0,1).\]
+:::
+
+Here's another example where the name is different for HTML and LaTeX output, done with the header
+
+~~~
+::: {.theorem data-html="2&pi; Theorem" data-latex="$2\pi$ Theorem"}
+~~~
+
+::: {.theorem data-html="2&pi; Theorem" data-latex="$2\pi$ Theorem"}
+A sufficient condition for Dehn filling on a cusped hyperbolic 3-manifold to result in a negatively curved 3-manifold.
 :::
 
 ## Referencing
