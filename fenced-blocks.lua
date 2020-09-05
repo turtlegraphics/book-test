@@ -1,6 +1,6 @@
 --[[
      A Pandoc 2 lua filter converting Pandoc native divs to amsthm style numbered environments.
-     Author: Bryan Clair
+     Author: Bryan Clair, expanding latex-div.lua by Romain Lesur, Christophe Dervieux, and Yihui Xie
      License: Public domain
      
      For LaTeX output, things are fairly simple since the amsthm package handles
@@ -46,7 +46,7 @@ Since those are currently hardcoded into bookdown, they cannot be changed by thi
 The settings below match the hardcoded LaTeX settings for html output.
 
 Ideally, these settings should come from the YAML for the source document,
-and generate the appropriate LaTeX setup as well.
+and generate the appropriate LaTeX \newtheorem commands as well.
 
 --]]
 
@@ -86,15 +86,12 @@ handle_fenced_div = function (div)
   -- if the div has no class, we're not interested
   if not env then return nil end
 
-  io.stderr:write("Handling:" .. env .. "\n")
-
   -- check for unnumbered * variants
   local starred = false
   if env:match("*$") then
     starred = true
-    env = env:sub(1, #env - 1)
+    env = env:sub(1, #env - 1)  -- change to unstarred version
     div.classes[1] = env
-    io.stderr:write("   Changed to:" .. env .. "\n")
   end
   
   -- setup style from divstyle or as defaults
