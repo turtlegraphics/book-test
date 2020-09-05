@@ -50,7 +50,8 @@ divstyle = {
   remark = { numbered = false, style = "remark" },
   definition = { style = "definition"},
   example = { sequence = "definition", style = "definition"},
-  proof = { numbered = false, style = "remark", name = "Proof:" }
+  proof = { numbered = false, style = "remark", name = "Proof:" },
+  exercise = { style = "definition", name = "" }
 }
 
 --[[
