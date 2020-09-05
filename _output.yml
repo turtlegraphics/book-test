@@ -13,6 +13,8 @@ bookdown::pdf_book:
   includes:
     in_header: preamble.tex
     after_body: index.tex
+  pandoc_args:
+    - --lua-filter=fenced-blocks.lua
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes

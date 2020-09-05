@@ -229,9 +229,6 @@ FILTER
 
 --]]
 
-io.stderr:write("Format: " .. FORMAT .. "\n")
-
-
 if FORMAT == "latex" or FORMAT == "beamer" then
   return {{ Div = latex_div }}
 elseif FORMAT == "gitbook" or FORMAT == "html" or FORMAT == "html4" then
