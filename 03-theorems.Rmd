@@ -101,19 +101,23 @@ I would argue that Theorem \@ref(thm:Lyapunov) is a really good theorem.  Thanks
 
 You can also reference across chapters. See Chapter \@ref(summary) for a link back to Lyapunov's theorem.
 
-There's an example in the preface, it's Example \@ref(prefaceex)
+There's an example in the preface, it's Example \@ref(prefaceex).
+
+References do not need to be surrounded or separated by whitespace: X\@ref(thm:Lyapunov)X, Exercises \@ref(ex:firsthiit)-\@ref(ex:lasthiit).
+
+Here is a theorem, and a reference back to it from the title of the proof.  Tricky!
+
+::: {.theorem #thm:meta}
+This theorem cannot be proven.
+:::
+
+::: {.proof data="of Theorem \@ref(thm:meta)"}
+If it could be proven, it would be false.
+:::
 
 ## Conclusion
 
-The conclusion of this chapter also demonstrates the use of the `proof` environment:
-
-::: theorem
-Using fenced divs is superior to the block approach.
-:::
-
-::: proof
-We prefer these fenced divs to the existing approach using code blocks.  Code blocks ruin the syntax highlighting in RStudio, cannot be nested or contain R code, and also have a nasty bug that breaks LaTeX output when the last thing in the theorem block is a list.
-:::
+Fenced divs have many advantages over bookdown's existing approach using code blocks.  Code blocks ruin the syntax highlighting in RStudio, cannot be nested or contain R code, and also have a nasty bug that breaks LaTeX output when the last thing in the theorem block is a list.
 
 ## Exercises {-}
 
