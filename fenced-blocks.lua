@@ -146,10 +146,20 @@ handle_fenced_div = function (div)
   )
   local parentxt = div.attributes["data-html"] or div.attributes["data"]
   if parentxt then
+    -- handle references *within* the data text
+    -- this will only catch back-references, but has an important use case
+    -- where a proof environment wants to refer to the theorem it's proving
+    parentxt = refstring(parentxt)
     table.insert(
       div.content, 2,
       pandoc.RawBlock('html', "(" .. parentxt .. ")")
     )
+    -- remove data attribute from further processing
+    if not div.attributes["data-html"] then
+      div.attributes["data"] = nil
+    else
+      div.attributes["data-html"] = nil
+    end
   end
 
   return div
@@ -188,18 +198,31 @@ function block_dispatch(el)
   end
 end
 
--- this function finds @ref(label) references and replaces
--- them with the appropriate number and a link to the block
+-- this function takes a string and replaces all @ref(label) inside
+-- it with the appropriate div number and link
+-- returns the string.
+refstring = function (s)
+  local changed
+  repeat
+    changed = false
+    leading, reflabel, trailing = s:match "(.*)@ref%((.-)%)(.*)"
+    if reflabel and labels[reflabel] then
+      changed = true
+      s = leading
+      s = s ..'<a href="#' .. reflabel .. '">'
+      s = s .. labels[reflabel] .. '</a>'
+      s = s .. trailing
+    end
+  until not changed
+  return s
+end
+
 fixrefs = function (elem)
-  reflabel, trailing = elem.text:match "@ref%((.-)%)(.*)"
-  if reflabel and labels[reflabel] then
-    local link = '<a href="#' .. reflabel .. '">'
-    link = link .. labels[reflabel] .. '</a>'
-    link = link .. trailing
+  link = refstring(elem.text)
+  if link ~= elem.text  then
     return pandoc.RawInline("html", link)
-  else
-    return elem
   end
+  return elem
 end
 
 --[[
@@ -215,9 +238,22 @@ latex_div = function (div)
   -- build begin text
   local begintxt = '\\begin{' .. env .. '}'
   
-  local data = div.attributes['data-latex'] or div.attributes['data']
-  if data then
-    begintxt = begintxt .. '[' .. data .. ']'
+  local parentxt = div.attributes['data-latex'] or div.attributes['data']
+  if parentxt then
+    if env == "proof" then
+      -- latex proof environment optional text [parentxt] behaves differently
+      -- from the other theorem environments.  Either we coerce things here
+      -- or we coerce things on the HTML side.  I've chosen to deal with
+      -- it here, since it's latex's inconsistency. Unfortunately, this
+      -- is bad for i18n.
+      parentxt = "Proof (" .. parentxt .. "):"
+    end
+    begintxt = begintxt .. '[' .. parentxt .. ']'
+    if not div.attributes["data-latex"] then
+      div.attributes["data"] = nil
+    else
+      div.attributes["data-latex"] = nil
+    end
   end
   
   local label = div.identifier
