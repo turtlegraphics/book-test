@@ -35,6 +35,20 @@ Now you're ready for questions \@ref(ex:easy) and \@ref(ex:skills), but probably
 
 You might refer back to Theorem \@ref(thm:Lyapunov) if you want to learn.
 
+## kables
+
+Test that fenced divs are compatible with kable.
+
+::: example
+This example has a kable
+
+```{r}
+knitr::kable(table(discoveries))
+```
+
+It is inside an example.
+:::
+
 ## Exercises {-}
 
 Question \@ref(ex:easy) is easy.
