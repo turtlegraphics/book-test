@@ -1,0 +1,67 @@
+# Dance
+
+```{r echo=FALSE}
+suppressMessages(suppressWarnings(library(dplyr)))
+includeSolutions <- TRUE
+```
+
+Some _significant_ \index{significant} applications are demonstrated in this chapter.
+
+::: definition
+Daft Punk\index{daft punk} is a French\index{French} electronic music duo formed in Paris in 1993 by Guy-Manuel de Homem-Christo and Thomas Bangalter.
+:::
+
+Daft Punk achieved popularity in the late 1990s as part of the French house movement; they also had success in the years following, combining elements of house music with funk, techno, disco, rock and synthpop. They have worn ornate helmets and gloves to assume robot personas in most public appearances since 1999[10] and rarely grant interviews or appear on television. The duo were managed from 1996 to 2008 by Pedro Winter (also known as Busy P), the head of Ed Banger Records.
+
+Here is a `tryit` block:
+
+::: tryit
+Try dancing to "Lose Yourself to Dance".  According to Pharrell, you should "feel like walking down the street in the middle of the night in London and it's 1984, 1985".
+:::
+
+and her is an alert.
+
+::: alert
+Look out!  Daft Punk is in the house.
+:::
+
+It is possible to nest blocks. The extra `:` characters are optional.  Here is a tryit nested within an example.
+
+::: example
+One more time
+
+We're gonna celebrate
+
+:::: alert
+Oh yeah, all right
+::::
+
+Don't stop the dancing
+
+:::
+
+## Exercises {-}
+
+::: {.exercise #ex:work}
+Work it\index{daft punk!work it}
+:::
+
+::: {.exercise #ex:make}
+Make it\index{daft punk!make it}
+:::
+
+::: {.exercise #ex:do}
+Do it\index{daft punk!do it}
+:::
+
+--------------
+
+Now what happens?
+
+::: {.exercise #ex:us}
+Makes us
+:::
+
+::: {.exercise #ex:better}
+Harder, better, faster, stronger.
+:::
