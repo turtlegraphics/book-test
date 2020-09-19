@@ -38,6 +38,5 @@ clean:
  - book-test.aux
  - book-test.log
  - book-test.synctex.gz
- - package-list.log
  
 ---

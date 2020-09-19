@@ -1,7 +1,20 @@
 # Preface {-}
 
-This is a test book for Foundations of Statistics with R.  It's got all the bells and whistles of the big book without any of the content.
+This is a bookdown book which was used as a testbed for
+developing Speegle, Clair "Foundations of Statistics with R" [@fosbook].
 
-::: {.example #prefaceex}
-You could put an example in the preface.
+This book has all the bells and whistles of the big book without any of the content.
+This book has (and demonstrates):
+
+* Numbered theorems, examples, etc.
+* "alert" and "tryit" environments.
+* Numbered exercises with solutions.
+* An index.
+* Vignettes.
+* Good looking html and latex output.
+* A makefile that can perform single-chapter PDF builds.
+* A clean directory and file structure.
+
+::: {.example #ex:prefaceex}
+Let's get started with a numbered example.
 :::

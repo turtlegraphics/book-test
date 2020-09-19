@@ -3,19 +3,19 @@
 # Book Metadata
 #
 title: "Bookdown Technical Demo"
-author: "Darrin Speegle and Bryan Clair"
+author: "Bryan Clair"
 date: "`r Sys.Date()`"
 
-   # description field is metadata in the html files that will show up on
-   # facebook, twitter, and other social media.  It does not appear in the book text.
+   # description field is metadata in the html files that will appear on
+   # social media.  It does not appear in the book text.
 description: >-
-   Bookdown Technical Demo by Speegle and Clair.
-   This has all the technical features of Foundations of Statistics with R without the content.
+   Bookdown Technical Demo by Bryan Clair.
+   This has all the technical features of Speegle, Clair "Foundations of Statistics with R".
 
 site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 
 documentclass: book
-bibliography: [book.bib,packages.bib]
+bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 ---
@@ -23,9 +23,8 @@ link-citations: yes
 ```{r include=FALSE}
 packs <- c("bookdown","rmarkdown","knitr")
 if (!is.null(packs)) {
-  packfile <- file("package-list.log","a")
+  packfile <- file("package-list","a")
   writeLines(packs,packfile)
   close(packfile)
 }
 ```
-

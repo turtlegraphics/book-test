@@ -101,7 +101,7 @@ I would argue that Theorem \@ref(thm:Lyapunov) is a really good theorem.  Thanks
 
 You can also reference across chapters. See Chapter \@ref(summary) for a link back to Lyapunov's theorem.
 
-There's an example in the preface, it's Example \@ref(prefaceex).
+There's an example in the preface, it's Example \@ref(ex:prefaceex).
 
 References do not need to be surrounded or separated by whitespace: X\@ref(thm:Lyapunov)X, Exercises \@ref(ex:firsthiit)-\@ref(ex:lasthiit).
 

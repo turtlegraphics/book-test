@@ -1,6 +1,6 @@
 # Final Words {#summary}
 
-Please answer question \@ref(ex:easy).  Question \@ref(ex:easy) should be and easy warmup for question \@ref(ex:skills). Answer question \@ref(ex:skills) before trying question \@ref(ex:hard).  Question \@ref(ex:impossible) doesn't actually exist.
+Please answer question \@ref(ex:easy).  Question \@ref(ex:easy) should be and easy warmup for question \@ref(ex:skills). Answer question \@ref(ex:skills) before trying question \@ref(ex:hard).  Question \@ref(ex:nonexistant) doesn't actually exist.
 
 ::: example
 This is an example.
@@ -57,7 +57,7 @@ Question \@ref(ex:easy) is easy.
 What is $S$?
 :::
 
-Questions \@ref(ex:hard) and \@ref(ex:impossible) are harder.
+Questions \@ref(ex:skills) and \@ref(ex:hard) are harder.
 
 ::: {.exercise #ex:skills}
 Show $\overline{\overline{(A+B)}+C} = A \cap \overline{C} + B \cap \overline{C}$

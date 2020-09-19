@@ -7,6 +7,7 @@ book-test.pdf
 .Ruserdata
 *.html
 _book/
+_bookPDF/
 _bookdown_files/
 packages.bib
 *_cache

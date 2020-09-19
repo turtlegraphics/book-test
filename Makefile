@@ -26,6 +26,8 @@
 # not really any error checking.
 #
 
+pdfoutputdir = _bookPDF
+
 ifndef chapter
 # Full book build
 html: 
@@ -33,7 +35,8 @@ html:
 
 pdf:
 	rm -f _main.md
-	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '$(pdfoutputdir)')"
+	mv *.log $(pdfoutputdir)
 
 else
 # Single chapter build
@@ -42,7 +45,8 @@ inname := $(shell ls $(chapter)-*.Rmd) # find chapter name by listing directory
 chapters = "['index.Rmd','$(inname)']"
 pdf: _bookdown_chapter.yml
 	rm -f _main.md
-	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book',config_file = '_bookdown_chapter.yml', output_file = '$(outname)')"
+	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '$(pdfoutputdir)', config_file = '_bookdown_chapter.yml', output_file = '$(outname)')"
+	mv *.log $(pdfoutputdir)
 
 html: _bookdown_chapter.yml
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook',config_file = '_bookdown_chapter.yml', output_file = '$(outname)')"
@@ -60,8 +64,9 @@ endif # end of single chapter build
 
 .PHONY:
 clean:
-	rm -f _main.md _main.rds _book/*.tex _book/*.pdf chapter-*.log chapter-*.pdf chapter-*.tex
+	rm -f _main.md _main.rds _book/*.tex _book/*.pdf chapter-*.log chapter-*.pdf chapter-*.tex *.log $(pdfoutputdir)/*.md $(pdfoutputdir)/*.log $(pdfoutputdir)/*.tex
 	rm -f bookdown*.bak
-	rm -f render*.rds
 	rm -f tmp-pdfcrop-*.tex
+	rm -f *.rds
+
 

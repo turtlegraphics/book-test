@@ -5,14 +5,14 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
+        <li><a href="./">Fully Loaded Book</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
-    after_body: index.tex
+    in_header: latex-preamble.tex
+    after_body: latex-backmatter.tex
   pandoc_args:
     - --lua-filter=fenced-blocks.lua
   latex_engine: xelatex

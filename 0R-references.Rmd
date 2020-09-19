@@ -2,7 +2,7 @@
 # References {-}
 '`
 ```{r include=FALSE}
-packs <- scan(file="package-list.log",what=character())
+packs <- scan(file="package-list",what=character())
 packs <- unique(packs)
 bib <- unlist(knitr::write_bib(packs))
 if (!is.null(bib)) {
