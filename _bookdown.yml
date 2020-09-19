@@ -2,13 +2,16 @@
 #
 # Chapters
 #
+#    Don't modify this syntax, because the Makefile relies on it
+#    to handle single chapter builds
+#
 rmd_files: [
   "index.Rmd",
   "00-preface.Rmd",
   "01-intro.Rmd",
   "02-literature.Rmd",
   "03-theorems.Rmd",
-  "04-application.Rmd",
+  "04-style.Rmd",
   "05-summary.Rmd",
   "0S-solutions.Rmd",
   "0R-references.Rmd"

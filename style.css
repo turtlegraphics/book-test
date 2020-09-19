@@ -26,24 +26,79 @@ span.divhead-definition {
 }
 
 span.divhead-remark {
-  font-weight: normal;
-  font-style: italic;
+  font-weight: bold;
+  font-style: normal;
 }
 
+div.proof {
+  margin-bottom: 1em;
+}
 div.proof::after {
+  position: relative;
+  bottom: 1.5em;
+  font-size: 150%;
   content: "\2610"; /* square box QED */
 }
 
 /* custom css for our book */
-div.theorem {
+div.theorem, div.proposition, div.definition {
   border: 1px solid gray;
   border-radius: 1em;
   padding-left: 1em;
+  padding-right: 1em;
   padding-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+div.theorem, div.proposition {
+    background-color: honeydew;
+}
+div.definition {
+  background-color: mintcream;
+}
+
+div.example {
+  background-color: aliceblue;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.5em;
 }
 
 div.remark {
+  background-color: snow;
+  padding-left: 1em;
+  margin-top: 0.5em;
+}
+
+div.tryit {
+  background-color: seashell;
   border-left: 1px solid gray;
   padding-left: 1em;
   margin-top: 0.5em;
+}
+span.tryit-before {
+  /* hide the default text */
+  display : none;
+}
+div.tryit::before {
+  /* replace default text */
+  font-weight : bold;
+  content: "Try It Yourself";
+}
+
+div.alert {
+  background-color: mistyrose;
+  border-left: 1px solid gray;
+  padding-left: 1em;
+  margin-top: 0.5em;
+}
+span.alert-before {
+  /* hide the default text */
+  display : none;
+}
+div.alert::before {
+  /* replace default text with ! icon */
+  font-size: 300%;
+  content: "\26A0";
 }

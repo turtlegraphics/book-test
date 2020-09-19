@@ -28,4 +28,4 @@ After spending all day getting henna designs drawn, she noticed she had a foot n
 
 [^henna]: This joke (c) 2020 by Bryan Clair.
 
-This book features music by Daft Punk\index{daft punk} and poetry by Carl Sandburg\index{Sandburg, Carl}.
+This book features music by Daft Punk\index{Daft Punk} and poetry by Carl Sandburg\index{Sandburg, Carl}.
