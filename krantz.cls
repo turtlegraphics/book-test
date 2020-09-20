@@ -1,6 +1,9 @@
 %% This is file `Krantz.cls'
 %%% Created by Shashi Kumar / ITC [August 2008]
 
+%%% Modified by Yihui Xie [August 2019]
+%%% Xie modifications available at
+%%% https://github.com/rstudio/bookdown/blob/master/inst/examples/krantz.cls
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{krantz}
