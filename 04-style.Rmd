@@ -19,7 +19,7 @@ Here is a `tryit` block:
 Try dancing to "Lose Yourself to Dance".  According to Pharrell, you should "feel like walking down the street in the middle of the night in London and it's 1984, 1985".
 :::
 
-and her is an alert.
+Here is an alert.
 
 ::: alert
 Look out!  Daft Punk is in the house.
