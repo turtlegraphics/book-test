@@ -14,10 +14,15 @@ description: >-
 
 site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 
-documentclass: krantz
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
+
+# Settings for CRC's krantz.cls
+# (more specifically, Yihui Xie's mod of krantz.cls)
+documentclass: krantz # use 'book' for default book documentclass
+classoption: krantz2  # gives 5.5 x 8.5 page area.  Default is krantz1, 4.5 x 7.5
+
 ---
 
 ```{r include=FALSE}
@@ -26,6 +31,51 @@ link-citations: yes
 # pacakages.bib for use in the References
 
 packs <- c("bookdown","rmarkdown","knitr")
+if (!is.null(packs)) {
+  packfile <- file("package-list","a")
+  writeLines(packs,packfile)
+  close(packfile)
+}
+```
+```{r include=FALSE, cache=FALSE}
+# This script is set to run automatically at the end of each chapter
+# in the _bookdown.yml configuration file
+
+#
+# It automatically writes all packages to the end of the file "package-list"
+# which was first created in the index.Rmd file
+#
+packs <- .packages()
+if (!is.null(packs)) {
+  packfile <- file("package-list","a")
+  writeLines(packs,packfile)
+  close(packfile)
+}
+```
+```{r include=FALSE, cache=FALSE}
+# This script is set to run automatically at the end of each chapter
+# in the _bookdown.yml configuration file
+
+#
+# It automatically writes all packages to the end of the file "package-list"
+# which was first created in the index.Rmd file
+#
+packs <- .packages()
+if (!is.null(packs)) {
+  packfile <- file("package-list","a")
+  writeLines(packs,packfile)
+  close(packfile)
+}
+```
+```{r include=FALSE, cache=FALSE}
+# This script is set to run automatically at the end of each chapter
+# in the _bookdown.yml configuration file
+
+#
+# It automatically writes all packages to the end of the file "package-list"
+# which was first created in the index.Rmd file
+#
+packs <- .packages()
 if (!is.null(packs)) {
   packfile <- file("package-list","a")
   writeLines(packs,packfile)
