@@ -14,13 +14,17 @@ description: >-
 
 site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 
-documentclass: book
+documentclass: krantz
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 ---
 
 ```{r include=FALSE}
+# This works together with package-list.R to create an automatic
+# list of packages used by the book.  That list turns into
+# pacakages.bib for use in the References
+
 packs <- c("bookdown","rmarkdown","knitr")
 if (!is.null(packs)) {
   packfile <- file("package-list","a")

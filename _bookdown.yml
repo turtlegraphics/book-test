@@ -33,13 +33,13 @@ book_filename: "book-test"
 output_dir: "_book"
 delete_merged_file: true
 clean:
- - book-test.md
- - packages.bib
- - book-test.out
- - book-test.blg
- - book-test.toc
- - book-test.aux
- - book-test.log
- - book-test.synctex.gz
- 
+  - book-test.md
+  - packages.bib
+  - book-test.out
+  - book-test.blg
+  - book-test.toc
+  - book-test.aux
+  - book-test.log
+  - book-test.synctex.gz
+
 ---
