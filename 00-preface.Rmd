@@ -2,19 +2,32 @@
 
 This is a bookdown book which was used as a testbed for
 developing Speegle, Clair "Foundations of Statistics with R" [@fosbook].
-
 This book has all the bells and whistles of the big book without any of the content.
-This book has (and demonstrates):
+
+It had its origin in the minimal "Bookdown Demo" book by Yihui Xie,
+available at https://github.com/rstudio/bookdown-demo.
+
+While "Bookdown Demo" was intended as a minimal working example, this book/project
+is more of a batteries included example, which evolved as FoS grew.  If you
+are interested in writing a texbook (as opposed to a reference manual), you will
+probably find features in this book helpful.
+
+This book has (and demonstrates how to make):
 
 * Numbered theorems, examples, etc.
-* "alert" and "tryit" environments.
+* Custom environments ("alert" and "tryit", for example).
 * Numbered exercises with solutions.
 * An index.
 * Vignettes.
 * Good looking html and latex output.
+* Usage of CRC's `krantz.cls` style for books.
 * A makefile that can perform single-chapter PDF builds.
 * A clean directory and file structure.
 
+Because this book was built as a testbed for FoS, it has a few things
+purely intended to ensure proper operation of the technology.  Here
+is one:
+
 ::: {.example #ex:prefaceex}
-Let's get started with a numbered example.
+A numbered example in the preface that will be referenced later.
 :::
