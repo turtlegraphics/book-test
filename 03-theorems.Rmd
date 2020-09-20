@@ -126,6 +126,7 @@ Run 8 laps.
 :::
 
 ---------
+
 Exercises \@ref(ex:firsthiit) - \@ref(ex:lasthiit) are HIIT.
 
 ::: {.exercise #ex:firsthiit}
