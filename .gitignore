@@ -26,3 +26,4 @@ rsconnect/*
 crc*
 *.rds
 *.log
+*.thm
