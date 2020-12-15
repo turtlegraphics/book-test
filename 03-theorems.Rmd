@@ -90,6 +90,10 @@ Here's another example where the name is different for HTML and LaTeX output, do
 A sufficient condition for Dehn filling on a cusped hyperbolic 3-manifold to result in a negatively curved 3-manifold.
 :::
 
+::: proof
+The proof is left as a trivial exercise to the reader, if the reader is well versed in geometric topology.
+:::
+
 The `data-html` and `data-latex` take precedence over `data`, so you could use `data` to set a
 default and then the output specific data settings to override that.
 
