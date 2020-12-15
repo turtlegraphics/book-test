@@ -1,30 +1,99 @@
 % Use for better looking tables
 %\usepackage{booktabs}
 
-% Use to set up fenced div theorem structures
-\usepackage{amsthm}
+%
+% DRAFT watermark
+%
+\usepackage{draftwatermark}
+
+%
+% Define block structures
+%
+\usepackage[framed]{ntheorem}
+
+% For some reason, krantz.cls eats the whitespace before theorem environments.
+% This fixes it manually.
+\newlength{\pretheoremskiplen}
+\setlength{\pretheoremskiplen}{10pt}
+
+% Theorem and other mathy statements
 \theoremstyle{plain}
+\theorembodyfont{\itshape}
+\theorempreskip{\pretheoremskiplen}
+\theoremseparator{.}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}{Lemma}[chapter]
 \newtheorem{corollary}{Corollary}[chapter]
 \newtheorem{proposition}{Proposition}[chapter]
 \newtheorem{conjecture}{Conjecture}[chapter]
-\newtheorem*{theorem*}{Theorem}
+
+% Assumptions
+\theoremstyle{plain}
+\theorembodyfont{\itshape}
+\theorempreskip{\pretheoremskiplen}
+
 \newtheorem{assumptions}{Assumptions}[chapter]
 
-\theoremstyle{definition}
+% Definition
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\theorempreskip{\pretheoremskiplen}
 \newtheorem{definition}{Definition}[chapter]
-\newtheorem{example}[definition]{Example}
-\newtheorem{exercise}{}[chapter]
-\newtheorem*{definition*}{Definition}
-\newtheorem*{example*}{Example}
-\newtheorem*{exercise*}{}
 
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{alert}{Alert}
-\newtheorem*{tryit}{Try It Yourself}
+% Example
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\theorempreskip{\pretheoremskiplen}
+\newtheorem{example}{Example}[chapter]
 
-% Use to create an index
+% Remark
+\theoremstyle{nonumberplain}
+\theorempreskip{\pretheoremskiplen}
+\theorembodyfont{\upshape}
+\newtheorem{remark}{Remark}
+
+\newcommand\AlertTriangle{%
+ \makebox[1.4em][c]{%
+ \makebox[0pt][c]{\raisebox{.35em}{\large!}}%
+ \makebox[0pt][c]{\Huge$\bigtriangleup$}}%
+}
+ 
+% Alert
+\theoremstyle{nonumberbreak}
+\theoremprework{\begin{leftbar}}
+\theorempostwork{\end{leftbar}}
+\theoremseparator{}
+\theorempreskip{\pretheoremskiplen}
+\theorembodyfont{\upshape}
+\newtheorem{alert}{\hspace{1ex}\AlertTriangle\hspace{1em}}
+
+% Try it
+\theoremstyle{nonumberbreak}
+\theoremprework{\begin{leftbar}}
+\theorempostwork{\end{leftbar}}
+\theorempreskip{\pretheoremskiplen}
+\theorembodyfont{\upshape}
+\newtheorem{tryit}{Try It Yourself}
+\theoremseparator{.}
+
+% Exercise
+\newlength{\eSpace}
+\settowidth{\eSpace}{ } % width of a space
+\theoremstyle{plain}
+\theorempreskip{0pt}
+\theorembodyfont{\upshape}
+\newtheorem{exercise}{\hspace{-\eSpace}}[chapter]
+
+% proof
+\theoremstyle{nonumberplain}
+\theorempreskip{\pretheoremskiplen}
+\theorembodyfont{\upshape}
+\theoremheaderfont{\itshape}
+\theorempostwork{\vspace{-\pretheoremskiplen}\hfill\rule{1.4ex}{1.4ex}}
+\newtheorem{proof}{Proof}
+
+%
+% Index creation
+%
 \usepackage{makeidx}
 \makeindex
