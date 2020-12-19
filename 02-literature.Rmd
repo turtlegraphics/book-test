@@ -1,6 +1,9 @@
 # Literature
 Some text and exercises, and a demonstration vignette.
 
+Read more of Rootabaga Stories at https://www.gutenberg.org/files/27085/27085-h/27085-h.htm
+\marginpar{\qrcode[height=0.5in]{https://www.gutenberg.org/files/27085/27085-h/27085-h.htm}}
+
 ## The Wedding Procession of the Rag Doll and the Broom Handle and Who Was in It
 
 The Rag Doll had many friends. The Whisk Broom, the Furnace Shovel, the Coffee Pot, they all liked the Rag Doll very much.
