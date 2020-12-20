@@ -37,6 +37,7 @@ pdf:
 	rm -f _main.md
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '$(pdfoutputdir)')"
 	mv *.log $(pdfoutputdir)
+	mv *.thm $(pdfoutputdir)
 
 else
 # Single chapter build
