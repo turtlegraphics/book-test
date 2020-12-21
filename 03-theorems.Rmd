@@ -21,7 +21,7 @@ Random variables built from many independent events tend to be normal.
 Note that the various `\newtheorem` commands get put into the LaTeX preamble automatically
 as long as your markdown document has one of bookdown's code block theorem-like structures.
 As soon as the last one of those is eradicated, you need to put the `\newtheorem` definitions
-into the `preamble.tex` file yourself, as you can see in this book's `preamble.tex`.
+into the `latex-preamble.tex` file yourself, as you can see in this book's `latex-preamble.tex`.
 
 ::: theorem*
 An unnumbered theorem.
