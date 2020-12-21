@@ -23,6 +23,8 @@ Here is an alert.
 
 ::: alert
 Look out!  Daft Punk is in the house.
+
+They will absolutely blow your mind.
 :::
 
 It is possible to nest blocks. The extra `:` characters are optional.  Here is a tryit nested within an example.
@@ -34,6 +36,7 @@ We're gonna celebrate
 
 :::: alert
 Oh yeah, all right
+
 ::::
 
 Don't stop the dancing
