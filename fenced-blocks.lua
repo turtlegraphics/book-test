@@ -240,6 +240,9 @@ latex_div = function (div)
   
   local parentxt = div.attributes['data-latex'] or div.attributes['data']
   if parentxt then
+    --[[
+    -- Switching to ntheorem from amsthm solved the idiosyncratic proof environment,
+    -- rendering this code unnecessary.
     if env == "proof" then
       -- latex proof environment optional text [parentxt] behaves differently
       -- from the other theorem environments.  Either we coerce things here
@@ -248,6 +251,7 @@ latex_div = function (div)
       -- is bad for i18n.
       parentxt = "Proof (" .. parentxt .. "):"
     end
+    --]]
     begintxt = begintxt .. '[' .. parentxt .. ']'
     if not div.attributes["data-latex"] then
       div.attributes["data"] = nil
