@@ -22,9 +22,7 @@ Try dancing to "Lose Yourself to Dance".  According to Pharrell, you should "fee
 Here is an alert.
 
 ::: alert
-Look out!  Daft Punk is in the house.
-
-They will absolutely blow your mind.
+Single line alerts don't look great, and mysteriously depend on spacing in the source.
 :::
 
 It is possible to nest blocks. The extra `:` characters are optional.  Here is a tryit nested within an example.
@@ -35,12 +33,23 @@ One more time
 We're gonna celebrate
 
 :::: alert
+
 Oh yeah, all right
 
 ::::
 
 Don't stop the dancing
 
+:::
+
+Why do they wear masks?  Here's a quote:
+
+I think people understand what we are doing. I know many people who maybe like the way we are handling things. People understand that you don't need to be on the covers of magazines with your face to make good music. Painters or other artists, you don't know them but you know what they are doing. We are very happy that the concept in itself is becoming famous. In France, you speak of Daft Punk and I'm sure millions of people have heard it, but less than a few thousand people know our face—which is the thing we're into. We control it, but it's not us physically, our persons. We don't want to run into people who are the same age as us, shaking our hand and saying, 'Can I have your autograph?' because we think we're exactly like them. Even girls, they can fall in love with your music, but not with you. You don't always have to compromise yourself to be successful. The playing with masks is just to make it funnier. Pictures can be boring.
+
+::: alert
+This alert is on a different page.  And it's long enough that it wraps to a few lines.
+
+Daft Punk continued to wear the robot costumes in their live performances at the 2008, 2014 and 2017 Grammy Awards, with variations in clothing. During the 2014 ceremony, they also accepted their awards on stage in the outfits, with Pharrell and Paul Williams speaking on the duo's behalf.
 :::
 
 ## Exercises {-}

@@ -2,6 +2,20 @@
 %\usepackage{booktabs}
 
 %
+% Index creation
+%
+\usepackage{makeidx}
+\makeindex
+
+%
+% The enumitem package improves itemize and enumerate lists
+% just by using it. The most important reason to use it is
+% so that exercises that begin with parts a. b. etc are formatted
+% properly.
+%
+\usepackage{enumitem}
+
+%
 % DRAFT watermark
 %
 \usepackage{draftwatermark}
@@ -14,7 +28,11 @@
 %
 % Define block structures
 %
-\usepackage[framed]{ntheorem}
+
+%
+% We're not using amsthm because ntheorem is more flexible
+%
+\usepackage{ntheorem}
 
 % For some reason, krantz.cls eats the whitespace before theorem environments.
 % This fixes it manually.
@@ -64,19 +82,38 @@
 }
  
 % Alert
-\theoremstyle{nonumberbreak}
-\theoremprework{\begin{leftbar}}
-\theorempostwork{\end{leftbar}}
-\theoremseparator{}
-\theorempreskip{\pretheoremskiplen}
-\theorembodyfont{\upshape}
-\newtheorem{alert}{\hspace{1ex}\AlertTriangle\hspace{1em}}
+%\theoremstyle{nonumberbreak}
+%\theoremprework{\vspace{\pretheoremskiplen}\begin{leftbar}}
+%\theorempostwork{\end{leftbar}}
+%\theoremseparator{}
+%\theorempreskip{0pt}
+%\theorembodyfont{\upshape}
+%\newtheorem{alert}{\hspace{1ex}\AlertTriangle\hspace{1em}}
+
+% Alert
+% (failed attempt)
+%
+% The marginnote package allows marginnotes with the command
+% \marginnote
+% that, unlike \marginpar, can happen from inside of boxes.
+% Boxes like a framebox, which we need for alerts.
+%
+%\usepackage{marginnote}
+%
+% One of many failed attempts to put the alert logo in the left margin
+\newenvironment{alert}%
+   {%
+      \vspace{4pt}\begin{leftbar}%
+      \hspace{-1.5cm}\includegraphics[height=0.8cm]{images/alert.png}%
+      \vspace{-1cm}%
+   }%
+  {\vspace{2pt}\end{leftbar}\vspace{-2pt}}
 
 % Try it
 \theoremstyle{nonumberbreak}
-\theoremprework{\begin{leftbar}}
-\theorempostwork{\end{leftbar}}
-\theorempreskip{\pretheoremskiplen}
+\theoremprework{\vspace{6pt}\begin{leftbar}\vspace{4pt}}
+\theorempostwork{\vspace{2pt}\end{leftbar}\vspace{-2pt}}
+\theorempreskip{0pt}
 \theorembodyfont{\upshape}
 \newtheorem{tryit}{Try It Yourself}
 \theoremseparator{.}
@@ -97,8 +134,3 @@
 \theorempostwork{\vspace{-\pretheoremskiplen}\hfill\rule{1.4ex}{1.4ex}}
 \newtheorem{proof}{Proof}
 
-%
-% Index creation
-%
-\usepackage{makeidx}
-\makeindex
