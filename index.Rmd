@@ -20,7 +20,8 @@ link-citations: yes
 
 # Settings for CRC's krantz.cls
 # (more specifically, Yihui Xie's mod of krantz.cls)
-documentclass: krantz # use 'book' for default book documentclass
+#documentclass: book   # default latex book documentclass
+documentclass: krantz # CRC's krantz class (custom mod by Yihui)
 classoption: krantz2  # gives 5.5 x 8.5 page area.  Default is krantz1, 4.5 x 7.5
 
 ---

@@ -10,5 +10,7 @@
 # tidy all source code by default
 knitr::opts_chunk$set(tidy=TRUE)
 
-# restrict R output width to 72 so it won't overflow the PDF page width
-options(width = 72)
+# restrict R output width so it won't overflow the PDF page width
+#  - 64 for default Latex book document class
+#  - 72 for krantz
+options(width = 72)  
