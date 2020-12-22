@@ -6,7 +6,9 @@
 #    before_chapter_script: pre-chapter-script.R
 # which causes this behavior
 #
-suppressMessages(suppressWarnings(library(ggplot2)))
-suppressMessages(suppressWarnings(library(dplyr)))
 
+# tidy all source code by default
+knitr::opts_chunk$set(tidy=TRUE)
+
+# restrict R output width to 72 so it won't overflow the PDF page width
 options(width = 72)

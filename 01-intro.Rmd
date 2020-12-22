@@ -13,7 +13,7 @@ plot(pressure, type = 'b', pch = 19)
 Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
 
 \index{iris}
-```{r nice-tab, tidy=FALSE}
+```{r nice-tab}
 knitr::kable(
   head(faithful, 5), caption = 'Here is a nice table!',
   booktabs = TRUE
@@ -43,8 +43,24 @@ discoveries
 ```
 
 One wide matrix:
-```{r}
+```{r wider}
 matrix(runif(100), ncol = 20)
+```
+
+### Tidy source code
+Here we deal with source code reformatting for prettier style.
+This book has a global setting in `pre-chapter-script.R` that
+runs all source code through the `styler` package.
+Or you can do it on a chunk-by-chunk basis using the chunk options
+`tidy='styler'` or `tidy=TRUE` to use `formatR`.
+
+Enforcing line lengths needs to be done manually (for now, not supported by 
+either `styler` or `formatR`)
+
+```{r tossing}
+X <- replicate(1000, { coin_toss <-sample(c("H","T"),3, replace= TRUE)
+  sum(coin_toss == "H")})
+mean(X >= 1)
 ```
 
 ## Footnotes and indexing
