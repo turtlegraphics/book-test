@@ -20,6 +20,9 @@ rmd_files: [
 # Knit-then-Merge (KM) build renders each .Rmd file in its own session
 new_session: yes
 
+# Load packages used everywhere.  Other global R setup.
+before_chapter_script: pre-chapter-script.R
+
 # Generate a list of packages used
 after_chapter_script: package-list.R
 

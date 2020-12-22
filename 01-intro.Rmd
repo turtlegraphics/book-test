@@ -22,10 +22,36 @@ knitr::kable(
 
 You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
 
+## Fitting things on the page
+
+### Side by side figures
+You can put figures side by side using `out.width=c('50%','50%'), fig.show='hold'` options to r blocks.
+
+```{r palettes, out.width=c('50%','50%'), fig.show='hold'}
+library(RColorBrewer)
+display.brewer.pal(n = 8, name = "Blues")
+display.brewer.pal(n = 8, "Reds")
+```
+
+### Wide R output
+
+What happens with R output and margins?
+
+One long vector:
+```{r wide}
+discoveries
+```
+
+One wide matrix:
+```{r}
+matrix(runif(100), ncol = 20)
+```
+
 ## Footnotes and indexing
 
 After spending all day getting henna designs drawn, she noticed she had a foot note.[^henna]
 
 [^henna]: This joke (c) 2020 by Bryan Clair.
 
-This book features music by Daft Punk\index{Daft Punk} and poetry by Carl Sandburg\index{Sandburg, Carl}.
+Index in LaTeX with `\index{Daft Punk}\index{music!Daft Punk}`:
+This book features music by Daft Punk\index{Daft Punk}\index{music!Daft Punk} and poetry by Carl Sandburg\index{Sandburg, Carl}.
