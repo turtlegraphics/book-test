@@ -35,7 +35,10 @@ display.brewer.pal(n = 8, "Reds")
 
 ### Wide R output
 
-What happens with R output and margins?
+What happens with R output and margins?  By default, R output is 80 columns wide.
+That's too wide for most LaTeX page styles.  The `pre-chapter-script.R` file
+contains the line `options(width = 72)` which sets the R output so these big
+lines will fit.
 
 One long vector:
 ```{r wide}
@@ -45,6 +48,19 @@ discoveries
 One wide matrix:
 ```{r wider}
 matrix(runif(100), ncol = 20)
+```
+
+Here's an error that's too long.  The width option doesn't fix it.
+```{r bonk, error=TRUE}
+sample(x = 1:10, size = 30)
+```
+
+Here's a warning.
+
+```{r clonk, warning=TRUE}
+a <- 1:10
+a[5] <- 100:200
+a
 ```
 
 ### Tidy source code
