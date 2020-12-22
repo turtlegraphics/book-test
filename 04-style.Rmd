@@ -22,7 +22,7 @@ Try dancing to "Lose Yourself to Dance".  According to Pharrell, you should "fee
 Here is an alert.
 
 ::: alert
-Single line alerts don't look great, and mysteriously depend on spacing in the source.
+Single line alerts don't look great in PDF, and mysteriously depend on spacing in the source.
 :::
 
 It is possible to nest blocks. The extra `:` characters are optional.  Here is a tryit nested within an example.
