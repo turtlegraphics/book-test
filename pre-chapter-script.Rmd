@@ -45,7 +45,16 @@ local({
 })
 ```
 
-```{r, echo=FALSE, include=knitr::is_latex_output()}
+```{r pre-chapter-latex-only, echo=FALSE, include=knitr::is_latex_output()}
+#
+# LaTeX only portion
+#
+
+#
+# Set chapter number for single chapter PDF builds.
+# The Makefile produces the chapterfile, which contains the
+# chapter number it's trying to build.
+#
 local({
 chapterfile <- "_single_chapter_build_number.txt"
 if (file.exists(chapterfile)) {
@@ -56,4 +65,5 @@ if (file.exists(chapterfile)) {
   }
 }
 })
+
 ```

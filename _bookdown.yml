@@ -20,11 +20,15 @@ rmd_files: [
 # Knit-then-Merge (KM) build renders each .Rmd file in its own session
 new_session: yes
 
-# Load packages used everywhere.  Other global R setup.
-before_chapter_script: pre-chapter-script.R
-
-# Generate a list of packages used
-after_chapter_script: package-list.R
+# 
+# These before/after chapter scripts aren't working well with our
+# Knit-then-Merge build process, so instead we include what we need
+# in each file.
+#
+# Run before each chapter
+# before_chapter_script: pre-chapter-script.R
+# Run after each chapter
+# after_chapter_script: post-chapter-script.R
 
 # Book styling
 language:

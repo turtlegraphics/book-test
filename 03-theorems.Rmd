@@ -127,6 +127,7 @@ If it could be proven, it would be false.
 Fenced divs have many advantages over bookdown's existing approach using code blocks.  Code blocks ruin the syntax highlighting in RStudio, cannot be nested or contain R code, and also have a nasty bug that breaks LaTeX output when the last thing in the theorem block is a list.
 
 ## Exercises {-}
+
 \ExercisesBegin
 
 ::: exercise
