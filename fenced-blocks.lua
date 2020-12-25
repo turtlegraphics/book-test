@@ -56,7 +56,7 @@ divstyle = {
   example = { sequence = "definition", style = "definition"},
   proof = { numbered = false, style = "remark", name = "Proof:" },
   exercise = { style = "definition", name = "" },
-  solution = { style = "invisible" }
+  solution = { style = "invisible" }  -- switch to "plain" to make visible
 }
 
 --[[
