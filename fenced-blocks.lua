@@ -55,7 +55,8 @@ divstyle = {
   definition = { style = "definition"},
   example = { sequence = "definition", style = "definition"},
   proof = { numbered = false, style = "remark", name = "Proof:" },
-  exercise = { style = "definition", name = "" }
+  exercise = { style = "definition", name = "" },
+  solution = { style = "invisible" }
 }
 
 --[[
@@ -110,6 +111,9 @@ handle_fenced_div = function (div)
     numbered = divstyle[env].numbered
   end
   if starred then numbered = false end
+
+  -- drop invisible divs
+  if style == "invisible" then return nil end
 
   -- calculate numbering string for this env
   local number = ""
