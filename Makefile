@@ -41,8 +41,8 @@ html:
 pdf:
 	rm -f _main.md
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '$(pdfoutputdir)')"
-	mv *.log $(pdfoutputdir)
-	mv *.thm $(pdfoutputdir)
+	-mv *.log $(pdfoutputdir)
+	-mv *.thm $(pdfoutputdir)
 
 else
 
@@ -59,7 +59,8 @@ chapter_number_file = _single_chapter_build_number.txt
 pdf: _bookdown_chapter.yml $(chapter_number_file)
 	rm -f _main.md
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '$(pdfoutputdir)', config_file = '_bookdown_chapter.yml', output_file = '$(outname)')"
-	mv *.log $(pdfoutputdir)
+	-mv *.log $(pdfoutputdir)
+	-mv *.thm $(pdfoutputdir)
 
 html: _bookdown_chapter.yml
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook',config_file = '_bookdown_chapter.yml', output_file = '$(outname)')"
