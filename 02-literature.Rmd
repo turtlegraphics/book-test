@@ -1,3 +1,6 @@
+```{r child = 'pre-chapter-script.Rmd'}
+```
+
 # Literature
 Some text and exercises, and a demonstration vignette.
 

@@ -1,3 +1,6 @@
+```{r child = 'pre-chapter-script.Rmd'}
+```
+
 # Dance
 
 ```{r echo=FALSE}

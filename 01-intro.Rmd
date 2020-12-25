@@ -1,4 +1,12 @@
+```{r child = 'pre-chapter-script.Rmd'}
+```
+
 # Basics {#basics}
+```{r echo=FALSE}
+#
+# Output hook to wrap error messages which are displayed
+#
+```
 
 ## Labels and references
 You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(literature). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(theorems).
@@ -50,11 +58,6 @@ One wide matrix:
 matrix(runif(100), ncol = 20)
 ```
 
-Here's an error that's too long.  The width option doesn't fix it.
-```{r bonk, error=TRUE}
-sample(x = 1:10, size = 30)
-```
-
 Here's a warning.
 
 ```{r clonk, warning=TRUE}
@@ -62,6 +65,15 @@ a <- 1:10
 a[5] <- 100:200
 a
 ```
+
+Here's an error that's too long.  The width option doesn't fix it.
+Instead, there's an output hook (see [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/output-hooks.html))
+which is in the `pre-chapter-script.R` file.
+
+```{r bonk, error=TRUE}
+sample(x = 1:10, size = 30)
+```
+
 
 ### Tidy source code
 Here we deal with source code reformatting for prettier style.

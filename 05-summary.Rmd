@@ -1,3 +1,6 @@
+```{r child = 'pre-chapter-script.Rmd'}
+```
+
 # Final Words {#summary}
 
 Please answer question \@ref(ex:easy).  Question \@ref(ex:easy) should be and easy warmup for question \@ref(ex:skills). Answer question \@ref(ex:skills) before trying question \@ref(ex:hard).  Question \@ref(ex:nonexistant) doesn't actually exist.

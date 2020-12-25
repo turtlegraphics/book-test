@@ -1,0 +1,59 @@
+```{r pre-chapter-script, echo=FALSE}
+#
+# This script runs at the beginning of every chapter
+#
+# The _bookdown.yml file has the line:
+#    before_chapter_script: pre-chapter-script.R
+# which causes this behavior
+#
+# Dec 2020: I'm giving up on using the before_chapter_script
+# approach because it broke too many things.  Instead, just
+# include this at the start of each chapter with
+# ```{r child = 'pre-chapter-script.Rmd'}
+# ```
+
+# tidy all source code by default
+#
+knitr::opts_chunk$set(tidy=TRUE)
+#
+# documented approach is broken when using knit-then-merge builds
+#   and when using this as an auto-included before_chapter_script
+# see https://github.com/rstudio/bookdown/issues/1049
+#
+# instead, undocumented workaround:
+# options(knitr.chunk.tidy = 'styler')
+
+# restrict R output width so it won't overflow the PDF page width
+#  - 64 for default Latex book document class
+#  - 72 for krantz
+options(width = 72)  
+
+#
+# Output hook to wrap error messages which are intentionally displayed
+# (they don't get autowrapped by R)
+#
+local({
+  hook_old <- knitr::knit_hooks$get("error")  # save the old hook
+  error_too_long_wrapper <- function(x, options) {
+    # wrap x
+    x <- paste(strwrap(x, 76), collapse="\n## ")
+    x <- paste(x, "\n", sep="")
+    # pass the new x to the old hook
+    hook_old(x, options)
+  }
+  knitr::knit_hooks$set(error = error_too_long_wrapper)
+})
+```
+
+```{r, echo=FALSE, include=knitr::is_latex_output()}
+local({
+chapterfile <- "_single_chapter_build_number.txt"
+if (file.exists(chapterfile)) {
+  x <- scan(chapterfile, what = list(p=0))
+  if (x$p > 0) {
+    cstring <- paste('\\setcounter{chapter}{',x$p-1,'}',sep='')
+    knitr::asis_output(cstring)
+  }
+}
+})
+```

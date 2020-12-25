@@ -1,3 +1,6 @@
+```{r child = 'pre-chapter-script.Rmd'}
+```
+
 # Preface {-}
 
 ```{r child = 'README.md'}
