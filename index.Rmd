@@ -14,10 +14,6 @@ description: >-
 
 site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-
 # Settings for CRC's krantz.cls
 # (more specifically, Yihui Xie's mod of krantz.cls)
 #documentclass: book   # default latex book documentclass

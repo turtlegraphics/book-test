@@ -13,8 +13,6 @@ rmd_files: [
   "03-theorems.Rmd",
   "04-style.Rmd",
   "05-summary.Rmd",
-  "0S-solutions.Rmd",
-  "0R-references.Rmd"
   ]
 
 # Knit-then-Merge (KM) build renders each .Rmd file in its own session
@@ -41,7 +39,6 @@ output_dir: "_book"
 delete_merged_file: true
 clean:
   - book-test.md
-  - packages.bib
   - book-test.out
   - book-test.blg
   - book-test.toc

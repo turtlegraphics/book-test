@@ -14,7 +14,7 @@ This book has (and demonstrates how to make):
 
 * Numbered theorems, examples, etc.
 * Custom environments ("alert" and "tryit", for example).
-* Numbered exercises with solutions.
+* Numbered exercises with inline solutions that you can use to build a solutions manual.
 * An index.
 * Vignettes.
 * Good looking html and latex output.

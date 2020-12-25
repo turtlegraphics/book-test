@@ -2,11 +2,6 @@
 ```
 
 # Basics {#basics}
-```{r echo=FALSE}
-#
-# Output hook to wrap error messages which are displayed
-#
-```
 
 ## Labels and references
 You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(literature). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(theorems).
@@ -27,8 +22,6 @@ knitr::kable(
   booktabs = TRUE
 )
 ```
-
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
 
 ## Fitting things on the page
 
