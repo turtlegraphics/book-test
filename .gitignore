@@ -1,6 +1,5 @@
 book-test.tex
 book-test.pdf
-package-list
 answers/chapter*.tex
 answers/solution-manual.pdf
 .DS_store

@@ -25,16 +25,3 @@ documentclass: krantz # CRC's krantz class (custom mod by Yihui)
 classoption: krantz2  # gives 5.5 x 8.5 page area.  Default is krantz1, 4.5 x 7.5
 
 ---
-
-```{r include=FALSE}
-# This works together with package-list.R to create an automatic
-# list of packages used by the book.  That list turns into
-# pacakages.bib for use in the References
-
-packs <- c("bookdown","rmarkdown","knitr")
-if (!is.null(packs)) {
-  packfile <- file("package-list","a")
-  writeLines(packs,packfile)
-  close(packfile)
-}
-```
