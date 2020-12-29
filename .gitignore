@@ -1,7 +1,7 @@
 book-test.tex
 book-test.pdf
-answers/chapter*.tex
-answers/solution-manual.pdf
+solutions/chapter*.tex
+solutions/solution-manual.pdf
 .DS_store
 .Rproj.user
 .Rhistory
