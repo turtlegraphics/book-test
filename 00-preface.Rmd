@@ -8,7 +8,7 @@
 
 -------
 
-Because this book was built as a testbed for FoS, it has a few things
+Because this book was built as a testbed\index{testbed} for FoS, it has a few things
 purely intended to ensure proper operation of the technology.  Here
 is one:
 
