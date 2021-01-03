@@ -12,6 +12,7 @@ bookdown::gitbook:
 bookdown::pdf_book:
   includes:
     in_header: latex-preamble.tex
+    before_body: latex-frontmatter.tex
     after_body: latex-backmatter.tex
   pandoc_args:
     # custom filter to handle fenced div
