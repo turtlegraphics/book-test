@@ -1,9 +1,6 @@
 %% This is file `Krantz.cls'
 %%% Created by Shashi Kumar / ITC [August 2008]
 
-%%% Modified by Yihui Xie [August 2019]
-%%% Xie modifications available at
-%%% https://github.com/rstudio/bookdown/blob/master/inst/examples/krantz.cls
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{krantz}
@@ -378,7 +375,7 @@
 \let\@oddfoot\@empty
 \let\@evenfoot\@empty
     \let\@evenhead\even@head
-    \let\@oddhead\odd@head
+    \def\@oddhead{\RunningHeadFont\if@mainmatter\ifnum\value{section}>0 \enspace\fi\fi\rightmark\hfill\PageNumFont\thepage}%\odd@head
   \fi
   }
 \else
@@ -450,9 +447,9 @@
   \def\chaptermark##1{%
     \markboth{%
       ##1}{}}%
-  \def\sectionmark##1{%
+  \def\sectionmark##1{%\pagebreak[3]%
     \markright{%
-      ##1}}}
+      \thesection\enspace##1}}}
 \def\pdfon{\@pdftrue}
 \def\pdfoff{\@pdffalse}
 \if@pdf
