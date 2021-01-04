@@ -4,8 +4,13 @@
 %
 % Index creation
 %
-\usepackage{makeidx}
-\makeindex
+\usepackage{imakeidx}
+\makeindex[intoc=true]
+\makeindex[name=data,title=Index of Data Sets and Packages,intoc=true]
+
+\newcommand{\indexpackage}[1]{\index[data]{#1}\index{#1 (R package)}}
+\newcommand{\indexdata}[2]{\index[data]{#1 (#2)}\index{#1 (#2)}}
+\newcommand{\indexfosdata}[1]{\index[data]{#1 (fosdata)}\index{#1 (fosdata)}}
 
 %
 % The enumitem package improves itemize and enumerate lists

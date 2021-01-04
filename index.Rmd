@@ -20,4 +20,6 @@ site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 documentclass: krantz # CRC's krantz class (custom mod by Yihui)
 classoption: krantz2  # gives 5.5 x 8.5 page area.  Default is krantz1, 4.5 x 7.5
 
----
+--- 
+
+\mainmatter

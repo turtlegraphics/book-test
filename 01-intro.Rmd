@@ -1,4 +1,3 @@
-\mainmatter
 ```{r child = 'pre-chapter-script.Rmd'}
 ```
 
@@ -93,3 +92,11 @@ After spending all day getting henna designs drawn, she noticed she had a foot n
 
 Index in LaTeX with `\index{Daft Punk}\index{music!Daft Punk}`:
 This book features music by Daft Punk\index{Daft Punk}\index{music!Daft Punk} and poetry by Carl Sandburg\index{Sandburg, Carl}.
+
+We have a second index for data sets, and defined two LaTeX commands `\indexpackage` and `\indexdata`.
+For example, you might want to use the data sets `diamonds`\indexdata{diamonds}{ggplot2} or `mpg`\indexdata{mpg}{ggplot2}
+from the `ggplot2`\indexpackage{ggplot2} package.  Or maybe you prefer `DrinksWages`\indexdata{DrinksWages}{HistData}
+and `Quarrels`\indexdata{DrinksWages}{HistData} from `HistData`\indexpackage{HistData}.  Or, you can
+be a `MASS`\indexpackage{MASS}-ochist and use `anorexia`\indexdata{anorexia}{MASS}, `GAGurine`\indexdata{GAGurine}{MASS}
+and `deaths`\indexdata{deaths}{MASS}.
+
