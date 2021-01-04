@@ -29,6 +29,16 @@
 
 pdfoutputdir = _bookPDF
 
+# reusable clean-up command move the detritus of latex building into
+#    the pdf output directory
+define clean-up-pdf 
+mv *.log $(pdfoutputdir)
+mv *.thm $(pdfoutputdir)
+mv *.idx $(pdfoutputdir)
+mv *.ilg $(pdfoutputdir)
+mv *.ind $(pdfoutputdir)
+endef
+
 ifndef chapter
 
 #
@@ -41,9 +51,7 @@ html:
 pdf:
 	rm -f _main.md
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '$(pdfoutputdir)')"
-	-mv *.log $(pdfoutputdir)
-	-mv *.thm $(pdfoutputdir)
-
+	$(clean-up-pdf)
 else
 
 #
@@ -59,8 +67,7 @@ chapter_number_file = _single_chapter_build_number.txt
 pdf: _bookdown_chapter.yml $(chapter_number_file)
 	rm -f _main.md
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '$(pdfoutputdir)', config_file = '_bookdown_chapter.yml', output_file = '$(outname)')"
-	-mv *.log $(pdfoutputdir)
-	-mv *.thm $(pdfoutputdir)
+	$(clean-up-pdf)
 
 html: _bookdown_chapter.yml
 	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook',config_file = '_bookdown_chapter.yml', output_file = '$(outname)')"
@@ -86,7 +93,8 @@ endif # end of single chapter build
 
 .PHONY:
 clean:
-	rm -f _main.md _main.rds _book/*.tex _book/*.pdf chapter-*.log chapter-*.pdf chapter-*.tex *.log $(pdfoutputdir)/*.md $(pdfoutputdir)/*.log $(pdfoutputdir)/*.tex
+	rm -f _main.md _main.rds _book/*.tex _book/*.pdf *.log
+	rm -f $(pdfoutputdir)/*.md $(pdfoutputdir)/*.log $(pdfoutputdir)/*.tex $(pdfoutputdir)/*.idx $(pdfoutputdir)/*.ilg $(pdfoutputdir)/*.ind
 	rm -f bookdown*.bak
 	rm -f tmp-pdfcrop-*.tex
 	rm -f *.rds
