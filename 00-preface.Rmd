@@ -1,7 +1,7 @@
 ```{r child = 'pre-chapter-script.Rmd'}
 ```
 
-# Preface {.unlisted .unnumbered}
+# Preface {-}
 
 ```{r child = 'README.md'}
 ```
