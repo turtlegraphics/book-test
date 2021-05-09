@@ -714,7 +714,7 @@
                    \@topnewpage[\@makeschapterhead{#1}]%
                  \else
                    \@makeschapterhead{#1}%
-                   \addcontentsline{toc}{fm}{#1}
+%                   \addcontentsline{toc}{fm}{#1}  % Removed by Bryan Clair to fix duplicate TOC entries
                    \markboth{#1}{#1}
                    \@afterheading
                  \fi}
@@ -816,7 +816,9 @@
 \def\@ssection#1{%
   \if@ChapterTOCs
     \myaddcontentsline{\@chaptoc}{chapsection}{\string\makebox[\secnumwidth][l]{}#1}\fi
-  \@startsection{section}{1}{\z@}{-30\p@}{6\p@}{\sec@rule\nopagebreak\vskip9.5\p@\nopagebreak\SectionHeadFont}*{#1}}
+  \@startsection{section}{1}{\z@}{-30\p@}{6\p@}{\sec@rule\nopagebreak\vskip9.5\p@\nopagebreak\SectionHeadFont}*{#1}
+  \markright{\thechapter.\enspace#1} % added by Bryan Clair to create running heads for unnumbered sections
+  }
 \def\@section[#1][#2]#3{%
   \if@ChapterTOCs
     \addtocounter{section}{1}%
