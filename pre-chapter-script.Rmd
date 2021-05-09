@@ -1,36 +1,32 @@
 ```{r pre-chapter-script, echo=FALSE}
 #
-# This script runs at the beginning of every chapter
+# This script needs to run at the beginning of every chapter
 #
-# The _bookdown.yml file has the line:
-#    before_chapter_script: pre-chapter-script.R
-# which causes this behavior
-#
-# Dec 2020: I'm giving up on using the before_chapter_script
-# approach because it broke too many things.  Instead, just
-# include this at the start of each chapter with
+# Include at the start of each chapter with:
 # ```{r child = 'pre-chapter-script.Rmd'}
 # ```
-
-# tidy all source code by default
 #
-knitr::opts_chunk$set(tidy=TRUE)
-#
-# documented approach is broken when using knit-then-merge builds
-#   and when using this as an auto-included before_chapter_script
+# Potentially, this could be done with the _bookdown.yml file using:
+#    before_chapter_script: pre-chapter-script.R
+# However, as of Dec 2020 this functionality is broken when using knit-then-merge builds
 # see https://github.com/rstudio/bookdown/issues/1049
 #
-# instead, undocumented workaround:
-# options(knitr.chunk.tidy = 'styler')
 
 # restrict R output width so it won't overflow the PDF page width
 #  - 64 for default Latex book document class
 #  - 72 for krantz
-options(width = 72)  
+#
+options(width = 72)
+
+# tidy all source code by default
+# (this fails in a before_chapter_script)
+#
+knitr::opts_chunk$set(tidy = "styler")
 
 #
 # Output hook to wrap error messages which are intentionally displayed
-# (they don't get autowrapped by R)
+# They don't get autowrapped by R.
+# (this hook code fails in a before_chapter_script)
 #
 local({
   hook_old <- knitr::knit_hooks$get("error")  # save the old hook
@@ -42,6 +38,29 @@ local({
     hook_old(x, options)
   }
   knitr::knit_hooks$set(error = error_too_long_wrapper)
+})
+
+# Output hook to wrap Call in summary(mod) and Model in anova
+#
+local({
+  hook_old <- knitr::knit_hooks$get("output")  # save the old hook
+  call_wrapper <- function(x, options) {
+    # wrap x
+    if(stringr::str_detect(x, "Model.*?\\+[ ]*\\n")) {
+      x <- stringr::str_replace(x, "(?<=Model 1[\\S\\s]{63})[\\S\\s]{3}", "...")
+      x <- stringr::str_replace(x, "(?<=Model 2[\\S\\s]{63})[\\S\\s]{3}", "...")
+      x <- stringr::str_remove_all(x, "(?<=\\.\\.\\.)[\\S\\s]*?(?=\\n##[\\s]*?[MR])")
+    }
+    if(stringr::str_detect(x, "Call:")) {
+      if(stringr::str_length(stringr::str_extract(x, "lm\\([\\s\\S]*?,")) > 73) {
+        x <- stringr::str_replace(x, "(?<=lm[\\S\\s]{66})[\\S\\s]{3}", "...")
+        x <- stringr::str_remove_all(x, "(?<=\\.\\.\\.)[\\S\\s]*?(?=\\n##[\\s]*?Residuals)") 
+        x <- stringr::str_remove(x, "[\\s]*?\\n##(?=[\\s]*?\\.\\.\\.)")
+      }
+    }
+    hook_old(x, options)
+  }
+  knitr::knit_hooks$set(output = call_wrapper)
 })
 ```
 
@@ -65,5 +84,20 @@ if (file.exists(chapterfile)) {
   }
 }
 })
-
 ```
+
+```{r pre-chapter-setup, echo=FALSE}
+#
+# Force R v4 behavior stringsAsFactors = FALSE
+#
+options(stringsAsFactors = FALSE)
+
+#
+# load ggplot and dplyr, needed for (almost) all chapters
+#
+suppressMessages(suppressWarnings(library(ggplot2)))
+suppressMessages(suppressWarnings(library(dplyr)))
+
+set.seed(3850)  # so our book is not random
+```
+
