@@ -1,0 +1,25 @@
+---
+title: Chapter 1
+output:
+  html_document: default
+---
+
+\pagestyle{headings}
+
+# Solutions (Chapter 1)
+
+\iffalse
+
+<!-- List problems here with @problemname. --->
+
+\fi
+
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(fig.width=5, fig.height=3)
+suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(Lahman)))
+library(fosdata)
+```
+
+No problems in this chapter.

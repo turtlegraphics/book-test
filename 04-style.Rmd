@@ -57,8 +57,6 @@ Daft Punk continued to wear the robot costumes in their live performances at the
 
 ## Exercises {-}
 
-\ExercisesBegin
-
 ::: {.exercise #ex:work}
 Work it\index{daft punk!work it}
 :::
@@ -82,5 +80,3 @@ Makes us
 ::: {.exercise #ex:better}
 Harder, better, faster, stronger.
 :::
-
-\ExercisesEnd

@@ -1,0 +1,28 @@
+---
+title: Chapter 5
+output:
+  html_document: default
+---
+
+\pagestyle{headings}
+
+# Solutions (Chapter 5)
+
+\iffalse
+
+@easy.
+@skills.
+@hard.
+
+\fi
+
+**Problem @easy**
+
+Snek!
+
+**Problem @skills**
+Here it is: $\overline{\overline{(A+B)}+C} = A \cap \overline{C} + B \cap \overline{C}$
+
+
+**Problem @hard**
+No, you can't make me.

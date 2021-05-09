@@ -228,16 +228,10 @@ It is inside an example.
 
 ## Exercises {-}
 
-\ExercisesBegin
-
 Question \@ref(ex:easy) is easy.
 
 ::: {.exercise #ex:easy}
 What is $S$?
-
-::::: solution
-Snek!
-:::::
 :::
 
 Questions \@ref(ex:skills) and \@ref(ex:hard) are harder.
@@ -249,5 +243,3 @@ Show $\overline{\overline{(A+B)}+C} = A \cap \overline{C} + B \cap \overline{C}$
 ::: {.exercise #ex:hard}
 Given a formula $F(A_1,\dotsc,A_n)$ made from $\cup$,$\cap$, and set complement, find events $A_1,\cdots,A_n$ so that the set $F(A_1,\dotsc,A_n)$ is nonempty.
 :::
-
-\ExercisesEnd

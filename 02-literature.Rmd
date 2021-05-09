@@ -33,48 +33,26 @@ Next came the Clean Ears. They were proud. How they got into the procession nobo
 
 ## Exercises {-}
 
-\ExercisesBegin
-
 Exercises \@ref(ex:loss) - \@ref(ex:matching) require you to read this chapter.
 
 ::: {.exercise #ex:loss}
 How did Rag Doll lose her eyes?
-
-::::: solution
-A proud child banged the Rag Doll's head against a door.
-:::::
 :::
 
 ::: {.exercise #ex:fixed}
 Who fixed Rag Doll's eyes?
-
-::::: solution
-The broom handle
-:::::
 :::
 
 ::: {.exercise #ex:remade}
 What are Rag Doll's eyes made of now?
-
-::::: solution
-California prunes
-:::::
 :::
 
 ::: {.exercise #ex:nickname}
 What was Rag Doll's nickname?
-
-::::: solution
-Black eyes
-:::::
 :::
 
 ::: {.exercise #ex:procession}
 Why was there a procession?
-
-::::: solution
-Because the Rag Doll and the Broom Handle got married.
-:::::
 :::
 
 ::: {.exercise #ex:matching}
@@ -86,16 +64,4 @@ c. Wiggled something  __________________________
 d. Had chocolate on the end of their noses __________________________
 e. Laughed as they looked around _________________________
 
-::::: solution
-
-a. Tin Pan Bangers
-b. Spoon Lickers
-c. Clean Ears
-d. Chocolate Chins
-e. Dirty Bibs
-
-:::::
-
 :::
-
-\ExercisesEnd

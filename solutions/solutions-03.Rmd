@@ -1,0 +1,29 @@
+---
+title: Chapter 3
+output:
+  html_document: default
+---
+
+\pagestyle{headings}
+
+# Solutions (Chapter 3)
+
+\iffalse
+
+@firsthiit.
+@midhiit.
+@lasthiit.
+
+\fi
+
+**Problem @firsthiit**
+
+Work it!
+
+**Problem @midhiit**
+
+Higher!
+
+**Problem @lasthiit**
+
+Harder!

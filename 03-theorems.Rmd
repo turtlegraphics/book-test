@@ -128,14 +128,6 @@ Fenced divs have many advantages over bookdown's existing approach using code bl
 
 ## Exercises {-}
 
-\ExercisesBegin
-
-::: exercise
-Run 8 laps.
-:::
-
----------
-
 Exercises \@ref(ex:firsthiit) - \@ref(ex:lasthiit) are HIIT.
 
 ::: {.exercise #ex:firsthiit}
@@ -144,22 +136,9 @@ Explode off the ground and change legs in the air on each rep.
 a. Work 20 seconds.
 b. Rest 10 seconds.
 
-::::: solution
-```{r}
-plot(0:10,dpois(0:10,2))
-```
-
-Then
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
-
-:::::
 :::
 
-::: {.exercise data="Silly"}
+::: {.exercise #ex:midhiit, data="Silly"}
 Run on the spot, bringing your knees as high as possible.
 
 Then, do the following:
@@ -169,18 +148,9 @@ b. Croak like a frog
 
 Finally, this exercise is finished.
 
-::::: solution
-
-a. Quack quack
-b. Ribbit ribbit
-
-:::::
-
 :::
 
 ::: {.exercise #ex:lasthiit}
 a. Work 20 seconds.
 b. Rest 10 seconds.
 :::
-
-\ExercisesEnd

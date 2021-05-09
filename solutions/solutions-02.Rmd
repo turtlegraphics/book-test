@@ -1,0 +1,43 @@
+---
+title: Chapter 2
+output:
+  html_document: default
+---
+
+\pagestyle{headings}
+
+# Solutions (Chapter 2)
+
+\iffalse
+
+@loss.
+@fixed.
+@remade.
+@nickname.
+@procession.
+@matching.
+
+\fi
+
+**Problem @loss**
+A proud child banged the Rag Doll's head against a door.
+
+**Problem @fixed**
+The broom handle
+
+**Problem @remade**
+California prunes
+
+
+**Problem @nickname**
+Black eyes
+
+**Problem @procession**
+Because the Rag Doll and the Broom Handle got married.
+
+**Problem @matching**
+a. Tin Pan Bangers
+b. Spoon Lickers
+c. Clean Ears
+d. Chocolate Chins
+e. Dirty Bibs
