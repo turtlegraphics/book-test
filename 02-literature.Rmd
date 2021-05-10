@@ -12,9 +12,8 @@ data set from the `fosdata` package.
 
 ```{r peacock, echo=FALSE, fig.align="center", fig.cap="Pride and Prejudice book cover."}
 knitr::include_graphics("images/pnp_peacock.jpg")
+photo_credit(person="Hugh Thompson", description="Peacock cover", explanation="Found on the web.", url="")
 ```
-
-\photocredit{Peacock cover. Found this on the web somewhere.}
 
 ## The Wedding Procession of the Rag Doll and the Broom Handle and Who Was in It
 
@@ -28,9 +27,10 @@ There was a wedding when the Rag Doll married the Broom Handle. It was a grand w
 
 ```{r ragbroom, echo=FALSE, fig.align="center", out.width="50%"}
 knitr::include_graphics("images/ragbroom.png")
+photo_credit(person="Public domain", description="Rag Doll and Broom Handle",
+             explanation="This work is in the public domain in the United States because it was published (or registered with the U.S. Copyright Office) before January 1, 1926.",
+             url="https://commons.wikimedia.org/wiki/File:Rootabaga_Stories_-_Story_4_Headpiece.png")
 ```
-
-\photocredit{This work is in the public domain in the United States because it was published (or registered with the U.S. Copyright Office) before January 1, 1926. (\url{https://commons.wikimedia.org/wiki/File:Rootabaga_Stories_-_Story_4_Headpiece.png})}
 
 Who marched in the procession? Well, first came the Spoon Lickers. Every one of them had a tea spoon, or a soup spoon, though most of them had a big table spoon. On the spoons, what did they have? Oh, some had butter scotch, some had gravy, some had marshmallow fudge. Every one had something slickery sweet or fat to eat on the spoon. And as they marched in the wedding procession of the Rag Doll and the Broom Handle, they licked their spoons and looked around and licked their spoons again.
 

@@ -62,6 +62,25 @@ local({
   }
   knitr::knit_hooks$set(output = call_wrapper)
 })
+
+#
+#  Command to produce appropriate image credits
+#
+photo_credit <- function(person=NULL, description=NULL, explanation, url=NULL) {
+  lstring <- "'\\photocredit{"
+  if (!is.null(description)) {
+    lstring <- paste(lstring,'[',description,']',sep='')
+  }
+  if (!is.null(person)) {
+    lstring <- paste(lstring,' \\emph{',person,'.}',sep='')
+  }
+  lstring <- paste(lstring, explanation)
+  if (!is.null(url)) {
+    lstring <- paste(lstring, ' \\url{', url, '}', sep='')
+  }
+  lstring <- paste(lstring,'}')
+  knitr::asis_output(lstring)
+}
 ```
 
 ```{r pre-chapter-latex-only, echo=FALSE, include=knitr::is_latex_output()}

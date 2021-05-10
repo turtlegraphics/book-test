@@ -39,10 +39,12 @@
 
 % Package for custom list of tables/figures
 % We use it for our image credits
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
 \newlistof{photocredits}{photocredit}{Photo Credits}
-\newcommand{\photocredit}[1]{\addcontentsline{photocredit}{photocredit}{Chapter \protect\numberline{\thesubsubsection} #1}}
-
+\newcommand{\photocredit}[1]{\addcontentsline{photocredit}{photocredits}{\protect\numberline{\thesection}#1}}
+\renewcommand{\cftphotocreditspresnum}{Chapter }
+\setlength{\cftphotocreditsnumwidth}{0.8in}
+\renewcommand{\cftphotocreditsaftersnum}{.}
 %
 % DRAFT watermark
 %
