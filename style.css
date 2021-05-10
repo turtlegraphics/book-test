@@ -33,12 +33,18 @@ span.divhead-remark {
 div.proof {
   margin-bottom: 1em;
 }
-div.proof::after {
-  position: relative;
-  bottom: 1.5em;
-  font-size: 150%;
-  content: "\2610"; /* square box QED */
-}
+/*
+ * Removed this with the latest version of bookdown, which includes
+ * a QED box after div.proof.  But their version isn't great, as it bleeds into
+ * the following div sometimes.
+ *
+ * div.proof::after {
+ *  position: relative;
+ *  bottom: 1.5em;
+ *  font-size: 150%;
+ *  content: "\2610"; // square box QED
+ * }
+*/
 
 /* custom css for our book */
 div.theorem, div.proposition, div.definition {
