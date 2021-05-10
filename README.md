@@ -16,6 +16,8 @@ This book has (and demonstrates how to make):
 * Custom environments ("alert" and "tryit", for example).
 * Numbered exercises and a solutions manual.
 * An index.
+* A separate data index.
+* Photo credits that work smoothly in both html and latex for both inline and floated images.
 * Vignettes.
 * Good looking html and latex output.
 * Usage of CRC's `krantz.cls` style for books.

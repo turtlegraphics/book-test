@@ -66,20 +66,46 @@ local({
 #
 #  Command to produce appropriate image credits
 #
-photo_credit <- function(person=NULL, description=NULL, explanation, url=NULL) {
-  lstring <- "'\\photocredit{"
+photo_credit <- function(figure=NULL, person, description=NULL, explanation, url=NULL) {
+  # figure: (optional) Leave out for an inline figure, and for a floated figure give the r chunk name.
+  # person: Name of person or persons to credit
+  # description: (optional) "hovertext" sort of description for the image
+  # explanation: why we have the rights to use this image
+  # url: (optional) url linking to the image rights page
+
+  lstring <- ''
+  hstring <- ''
+
+  # Handle the floating credit that actually appears with the image
+  # Only do this for inline figures in latex, but always in html.
+  if (is.null(figure)) {
+      lstring <- paste(lstring, '\\hfill\\emph{\\footnotesize Image credit: ', person,'.}',sep='')
+  }
+  hstring <- paste(hstring, '<div class="photocredit">Image credit: ', person, '.</div>',sep='')
+  
+  # Handle the fully detailed photo credit
+  lstring <- paste(lstring,"\\photocredit{",sep='')
+  
   if (!is.null(description)) {
-    lstring <- paste(lstring,'[',description,']',sep='')
+    lstring <- paste(lstring,'[',description,'] ',sep='')
+  }
+  if (!is.null(figure)) {
+    lstring <- paste(lstring,'{\\bf Figure \\ref{fig:',figure,'}}. ',sep='')
   }
   if (!is.null(person)) {
-    lstring <- paste(lstring,' \\emph{',person,'.}',sep='')
+    lstring <- paste(lstring,'\\emph{',person,'.}',sep='')
   }
   lstring <- paste(lstring, explanation)
   if (!is.null(url)) {
     lstring <- paste(lstring, ' \\url{', url, '}', sep='')
   }
   lstring <- paste(lstring,'}')
-  knitr::asis_output(lstring)
+  
+  if (knitr::is_latex_output()) {
+    knitr::asis_output(lstring)
+  } else {
+    knitr::asis_output(hstring)
+  }
 }
 ```
 

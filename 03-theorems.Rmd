@@ -83,23 +83,6 @@ is satisfied, then a sum of $\frac{X_i - \mu_i}{s_n}$ converges in distribution 
 \[ \frac{1}{s_n} \sum_{i=1}^{n} \left(X_i - \mu_i\right) \ \xrightarrow{d}\ N(0,1).\]
 :::
 
-Here's another example where the name is different for HTML and LaTeX output, done with the header
-
-~~~
-::: {.theorem data-html="2&pi; Theorem" data-latex="$2\pi$ Theorem"}
-~~~
-
-::: {.theorem data-html="2&pi; Theorem" data-latex="$2\pi$ Theorem"}
-A sufficient condition for Dehn filling on a cusped hyperbolic 3-manifold to result in a negatively curved 3-manifold.
-:::
-
-::: proof
-The proof is left as a trivial exercise to the reader, if the reader is well versed in geometric topology.
-:::
-
-The `data-html` and `data-latex` take precedence over `data`, so you could use `data` to set a
-default and then the output specific data settings to override that.
-
 ## Referencing
 
 You can reference theorem-like environments with ```\@ref(thm:Lyapunov)```. 
@@ -138,7 +121,7 @@ b. Rest 10 seconds.
 
 :::
 
-::: {.exercise #ex:midhiit, data="Silly"}
+::: {.exercise #ex:midhiit data="Silly"}
 Run on the spot, bringing your knees as high as possible.
 
 Then, do the following:

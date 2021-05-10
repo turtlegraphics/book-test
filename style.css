@@ -46,7 +46,18 @@ div.proof {
  * }
 */
 
-/* custom css for our book */
+/*
+ * custom css for our book
+ */
+
+/* Photo credits */
+div.photocredit {
+  font-size: small;
+  font-style: italic;
+  text-align: right;
+}
+
+/* Theorem and other structures */
 div.theorem, div.proposition, div.definition {
   border: 1px solid gray;
   border-radius: 1em;
