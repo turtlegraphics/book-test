@@ -28,6 +28,6 @@ libs/
 *.ilg
 *.ind
 *.synctex.gz
+*.photocredit
 
 solutions/*.pdf
-book-test.photocredit
