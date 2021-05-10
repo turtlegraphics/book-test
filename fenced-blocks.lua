@@ -41,9 +41,14 @@ All classes have unnumbered * variants built-in.
 --[[
 SETTINGS
 
-In LaTeX, this setup is handled by amsthm definitions in the preamble.
+Only fenced divs with names appearing in the divstyle definition
+below will be affected by this filter.
+
+Settings include style, sequence, name, numbered.
+
+These settings only matter for HTML output.
+In LaTeX, this setup is handled by amsthm (or ntheorem) definitions in the preamble.
 Since those are currently hardcoded into bookdown, they cannot be changed by this filter.
-The settings below match the hardcoded LaTeX settings for html output.
 
 Ideally, these settings should come from the YAML for the source document,
 and generate the appropriate LaTeX \newtheorem commands as well.
@@ -51,12 +56,16 @@ and generate the appropriate LaTeX \newtheorem commands as well.
 --]]
 
 divstyle = {
-  remark = { numbered = false, style = "remark" },
+  alert = {},
+  assumptions = {},
   definition = { style = "definition"},
   example = { sequence = "definition", style = "definition"},
-  proof = { numbered = false, style = "remark", name = "Proof:" },
   exercise = { style = "definition", name = "" },
-  solution = { style = "invisible" }  -- switch to "plain" to make visible
+  proof = { numbered = false, style = "remark", name = "Proof:" },
+  proposition = {},
+  remark = { numbered = false, style = "remark" },
+  theorem = {},
+  tryit = {}
 }
 
 --[[
@@ -92,13 +101,15 @@ handle_fenced_div = function (div)
   if env:match("*$") then
     starred = true
     env = env:sub(1, #env - 1)  -- change to unstarred version
-    div.classes[1] = env
   end
   
-  -- setup style from divstyle or as defaults
+  -- setup style from divstyle or ignore this div
   if not divstyle[env] then
-    divstyle[env] = {} -- use defaults
+    return nil
+    -- divstyle[env] = {} -- use defaults
   end
+
+  div.classes[1] = env
 
   local name = divstyle[env].name or env:gsub("^%l", string.upper)
 
@@ -111,9 +122,6 @@ handle_fenced_div = function (div)
     numbered = divstyle[env].numbered
   end
   if starred then numbered = false end
-
-  -- drop invisible divs
-  if style == "invisible" then return nil end
 
   -- calculate numbering string for this env
   local number = ""
