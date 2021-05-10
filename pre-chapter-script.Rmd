@@ -73,6 +73,7 @@ photo_credit <- function(figure=NULL, person, description=NULL, explanation, url
   # explanation: why we have the rights to use this image
   # url: (optional) url linking to the image rights page
 
+  # Always works out the output for both latex and html, then chooses at the end.
   lstring <- ''
   hstring <- ''
 
@@ -81,10 +82,12 @@ photo_credit <- function(figure=NULL, person, description=NULL, explanation, url
   if (is.null(figure)) {
       lstring <- paste(lstring, '\\hfill\\emph{\\footnotesize Image credit: ', person,'.}',sep='')
   }
-  hstring <- paste(hstring, '<div class="photocredit">Image credit: ', person, '.</div>',sep='')
+  hstring <- paste(hstring, '<div class="photocredit" onclick = "this.getElementsByTagName(\'span\')[0].classList.toggle(\'show\')">',sep='')
+  hstring <- paste(hstring, '<a>Image credit: ', person, '.</a>',sep='')
   
   # Handle the fully detailed photo credit
   lstring <- paste(lstring,"\\photocredit{",sep='')
+  hstring <- paste(hstring,'<span class="photocreditpopup" id="myPopup"><b>Image Credit</b><br/>',sep='')
   
   if (!is.null(description)) {
     lstring <- paste(lstring,'[',description,'] ',sep='')
@@ -94,12 +97,18 @@ photo_credit <- function(figure=NULL, person, description=NULL, explanation, url
   }
   if (!is.null(person)) {
     lstring <- paste(lstring,'\\emph{',person,'.}',sep='')
+    hstring <- paste(hstring,person,'. ',sep='')
   }
   lstring <- paste(lstring, explanation)
+  hstring <- paste(hstring, explanation)
+  
   if (!is.null(url)) {
     lstring <- paste(lstring, ' \\url{', url, '}', sep='')
+    hstring <- paste(hstring,'<a href="',url,'">',url,'</a>',sep='')
   }
-  lstring <- paste(lstring,'}')
+  
+  lstring <- paste(lstring,'}',sep='')
+  hstring <- paste(hstring,'</span></div>',sep='')
   
   if (knitr::is_latex_output()) {
     knitr::asis_output(lstring)

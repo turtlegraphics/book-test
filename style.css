@@ -55,6 +55,42 @@ div.photocredit {
   font-size: small;
   font-style: italic;
   text-align: right;
+  position: relative;
+}
+
+/* The photocredit popup (appears on top) */
+.photocredit .photocreditpopup {
+  visibility: hidden;
+
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  right: 0;
+  bottom: 0;
+  
+  border: thin solid black;
+  background-color: #EEE;
+  border-radius: 6px;
+  padding: 8px 8px;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.photocredit .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }
 
 /* Theorem and other structures */
