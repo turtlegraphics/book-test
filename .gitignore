@@ -10,6 +10,7 @@ _bookdown_files/
 *_cache
 *_files
 rsconnect/*
+libs/
 
 *.tsv
 *.Rdata
@@ -28,5 +29,4 @@ rsconnect/*
 *.ind
 *.synctex.gz
 
-solutions/chapter*.tex
-solutions/solution-manual.pdf
+solutions/*.pdf
