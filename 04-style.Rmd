@@ -14,6 +14,10 @@ Some _significant_ \index{significant} applications are demonstrated in this cha
 Daft Punk\index{daft punk} is a French\index{French} electronic music duo formed in Paris in 1993 by Guy-Manuel de Homem-Christo and Thomas Bangalter.
 :::
 
+```{r daftpunk, echo=FALSE, fig.align="center", out.width="50%"}
+knitr::include_graphics("images/daftpunk.jpg")
+```
+
 Daft Punk achieved popularity in the late 1990s as part of the French house movement; they also had success in the years following, combining elements of house music with funk, techno, disco, rock and synthpop. They have worn ornate helmets and gloves to assume robot personas in most public appearances since 1999[10] and rarely grant interviews or appear on television. The duo were managed from 1996 to 2008 by Pedro Winter (also known as Busy P), the head of Ed Banger Records.
 
 Here is a `tryit` block:
