@@ -100,7 +100,7 @@ photo_credit <- function(figure=NULL, person, description=NULL, explanation, url
     hstring <- paste(hstring,person,'. ',sep='')
   }
   lstring <- paste(lstring, explanation)
-  hstring <- paste(hstring, explanation)
+  hstring <- paste(hstring, ' ', explanation, ' ', sep='')
   
   if (!is.null(url)) {
     lstring <- paste(lstring, ' \\url{', url, '}', sep='')
