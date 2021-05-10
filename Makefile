@@ -97,6 +97,7 @@ clean:
 	rm -f $(pdfoutputdir)/*.md $(pdfoutputdir)/*.log $(pdfoutputdir)/*.tex $(pdfoutputdir)/*.idx $(pdfoutputdir)/*.ilg $(pdfoutputdir)/*.ind
 	rm -f bookdown*.bak
 	rm -f tmp-pdfcrop-*.tex
+	rm -f book-test.photocredit
 	rm -f *.rds
 
 
