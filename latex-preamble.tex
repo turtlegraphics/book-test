@@ -37,6 +37,12 @@
 \setdescription{style=nextline}
 %\setlist[enumerate]{topsep=0pt}
 
+% Package for custom list of tables/figures
+% We use it for our image credits
+\usepackage{tocloft}
+\newlistof{photocredits}{photocredit}{Photo Credits}
+\newcommand{\photocredit}[1]{\addcontentsline{photocredit}{photocredit}{Chapter \protect\numberline{\thesubsubsection} #1}}
+
 %
 % DRAFT watermark
 %
