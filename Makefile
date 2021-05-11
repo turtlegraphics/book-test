@@ -37,6 +37,7 @@ mv *.thm $(pdfoutputdir)
 mv *.idx $(pdfoutputdir)
 mv *.ilg $(pdfoutputdir)
 mv *.ind $(pdfoutputdir)
+mv *.photocredit $(pdfoutputdir)
 endef
 
 ifndef chapter
@@ -94,10 +95,9 @@ endif # end of single chapter build
 .PHONY:
 clean:
 	rm -f _main.md _main.rds _book/*.tex _book/*.pdf *.log
-	rm -f $(pdfoutputdir)/*.md $(pdfoutputdir)/*.log $(pdfoutputdir)/*.tex $(pdfoutputdir)/*.idx $(pdfoutputdir)/*.ilg $(pdfoutputdir)/*.ind
+	rm -f $(pdfoutputdir)/*.md $(pdfoutputdir)/*.log $(pdfoutputdir)/*.tex $(pdfoutputdir)/*.idx $(pdfoutputdir)/*.ilg $(pdfoutputdir)/*.ind $(pdfoutputdir)/*.photocredit
 	rm -f bookdown*.bak
 	rm -f tmp-pdfcrop-*.tex
-	rm -f *.photocredit
 	rm -f *.rds
 
 
