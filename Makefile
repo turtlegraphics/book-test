@@ -94,8 +94,8 @@ endif # end of single chapter build
 
 .PHONY:
 clean:
-	rm -f _main.md _main.rds _book/*.tex _book/*.pdf *.log
-	rm -f $(pdfoutputdir)/*.md $(pdfoutputdir)/*.log $(pdfoutputdir)/*.tex $(pdfoutputdir)/*.idx $(pdfoutputdir)/*.ilg $(pdfoutputdir)/*.ind $(pdfoutputdir)/*.photocredit
+	rm -f _main.md _main.rds _book/*.tex _book/*.pdf *.log *.thm
+	rm -f $(pdfoutputdir)/*.md $(pdfoutputdir)/*.log $(pdfoutputdir)/*.tex $(pdfoutputdir)/*.idx $(pdfoutputdir)/*.ilg $(pdfoutputdir)/*.ind $(pdfoutputdir)/*.photocredit $(pdfoutputdir)/*.thm $(pdfoutputdir)/*.pdf
 	rm -f bookdown*.bak
 	rm -f tmp-pdfcrop-*.tex
 	rm -f *.rds

@@ -8,12 +8,13 @@ bookdown::gitbook:
         <li><a href="./">Fully Loaded Book</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: ["pdf", "epub"]
+    download:
+
 bookdown::pdf_book:
   includes:
     in_header: latex-preamble.tex
-    before_body: latex-frontmatter.tex
     after_body: latex-backmatter.tex
+    before_body: latex-frontmatter.tex
   pandoc_args:
     # custom filter to handle fenced div
     - --lua-filter=fenced-blocks.lua
@@ -23,4 +24,3 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-bookdown::epub_book: default

@@ -2,9 +2,6 @@
 #
 # Chapters
 #
-#    Don't modify this syntax, because the Makefile relies on it
-#    to handle single chapter builds
-#
 rmd_files: [
   "index.Rmd",
   "00-preface.Rmd",
@@ -18,15 +15,10 @@ rmd_files: [
 # Knit-then-Merge (KM) build renders each .Rmd file in its own session
 new_session: yes
 
-# 
-# These before/after chapter scripts aren't working well with our
-# Knit-then-Merge build process, so instead we include what we need
-# in each file.
+# Replaced these because bookdown changed the way they are supported and broke
+# a bunch of functionality.  It's a shame.
 #
-# Run before each chapter
 # before_chapter_script: pre-chapter-script.R
-# Run after each chapter
-# after_chapter_script: post-chapter-script.R
 
 # Book styling
 language:
@@ -34,16 +26,11 @@ language:
     chapter_name: "Chapter "
 
 # Build Settings
-book_filename: "book-test"
 output_dir: "_book"
-delete_merged_file: true
 clean:
-  - book-test.md
-  - book-test.out
-  - book-test.blg
-  - book-test.toc
-  - book-test.aux
-  - book-test.log
-  - book-test.synctex.gz
+ - _main.md
+ - _main.tex
+ - _main.log
+ - packages.bib
 
 ---

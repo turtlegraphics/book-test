@@ -1,25 +1,27 @@
---- 
+---
+site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
+
 #
 # Book Metadata
 #
 title: "Bookdown Technical Demo"
+subtitle: "Batteries included"
 author: "Bryan Clair"
 date: "`r Sys.Date()`"
+cover-image: images/cover_image.png
+favicon: images/favicon.png
 
-   # description field is metadata in the html files that will appear on
-   # social media.  It does not appear in the book text.
+   # description field is metadata in the html files that will show up on
+   # facebook, twitter, and other social media.  It does not appear in the book text.
 description: >-
    Bookdown Technical Demo by Bryan Clair.
-   This has all the technical features of Speegle, Clair "Foundations of Statistics with R".
+   This has all the technical features of Speegle, Clair "Probability, Statistics, and Data: A Fresh Approach Using R".
 
-site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
 
 # Settings for CRC's krantz.cls
 # (more specifically, Yihui Xie's mod of krantz.cls)
-#documentclass: book   # default latex book documentclass
-documentclass: krantz # CRC's krantz class (custom mod by Yihui)
+documentclass: krantz # use 'book' for default book documentclass
 classoption: krantz2  # gives 5.5 x 8.5 page area.  Default is krantz1, 4.5 x 7.5
 
---- 
-
+---
 \mainmatter
