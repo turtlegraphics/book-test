@@ -54,177 +54,352 @@ It is inside an example.
 
 ## section1
 
+This is the first of a whole bunch of sections which are here only for the purpose of forcing the table
+of contents onto two pages.  A multi-page table of contents was causing problems with page number references
+in the table of contents itself, and also messing up the index.
+
 ## section2
+Boo
 
 ## section3
+Boo
+
 
 ## section4
+Boo
+
 
 ## section5
+Boo
+
 
 ## section6
+Boo
+
 
 ## section7
+Boo
+
 
 ## section8
+Boo
+
 
 ## section9
+Boo
+
 
 ## sectiona
+Boo
+
 
 ## sectionb
+Boo
+
 
 ## sectionc
+Boo
+
 
 ## sectiond
+Boo
+
 
 ## sectione
+Boo
+
 
 ## sectionf
+Boo
+
 
 ## sectiong
+Boo
+
 
 ## sectionh
+Boo
+
 
 ## sectioni
+Boo
+
 
 ## sectionj
+Boo
+
 
 ## sectionk
+Boo
+
 
 ## sectionl
+Boo
+
 
 ## sectionm
+Boo
+
 
 ## sectionn
+Boo
+
 
 ## sectiono
+Boo
+
 
 ## sectionp
+Boo
+
 
 ## sectionq
+Boo
+
 
 ## sectionr
+Boo
+
 
 ## sections
+Boo
+
 
 ## sectiont
+Boo
+
 
 ## sectionu
+Boo
+
 
 ## sectionv
+Boo
+
 
 ## sectionw
+Boo
+
 
 ## sectionx
+Boo
+
 
 ## sectiony
+Boo
+
 
 ## sectionz
+Boo
+
 
 ## sectiona1
+Boo
+
 
 ## sectionb1
+Boo
+
 
 ## sectionc1
+Boo
+
 
 ## sectiond1
+Boo
+
 
 ## sectione1
+Boo
+
 
 ## sectionf1
+Boo
+
 
 ## sectiong1
+Boo
+
 
 ## sectionh1
+Boo
+
 
 ## sectioni1
+Boo
+
 
 ## sectionj1
+Boo
+
 
 ## sectionk1
+Boo
+
 
 ## sectionl1
+Boo
+
 
 ## sectionm1
+Boo
+
 
 ## sectionn1
+Boo
+
 
 ## sectiono1
+Boo
+
 
 ## sectionp1
+Boo
+
 
 ## sectionq1
+Boo
+
 
 ## sectionr1
+Boo
+
 
 ## sections1
+Boo
+
 
 ## sectiont1
+Boo
+
 
 ## sectionu1
+Boo
+
 
 ## sectionv1
+Boo
+
 
 ## sectionw1
+Boo
+
 
 ## sectionx1
+Boo
+
 
 ## sectiony1
+Boo
+
 
 ## sectionz1
+Boo
+
 
 ## sectiona2
+Boo
+
 
 ## sectionb2
+Boo
+
 
 ## sectionc2
+Boo
+
 
 ## sectiond2
+Boo
+
 
 ## sectione2
+Boo
+
 
 ## sectionf2
+Boo
+
 
 ## sectiong2
+Boo
+
 
 ## sectionh2
+Boo
+
 
 ## sectioni2
+Boo
+
 
 ## sectionj2
+Boo
+
 
 ## sectionk2
+Boo
+
 
 ## sectionl2
+Boo
+
 
 ## sectionm2
+Boo
+
 
 ## sectionn2
+Boo
+
 
 ## sectiono2
+Boo
+
 
 ## sectionp2
+Boo
+
 
 ## sectionq2
+Boo
+
 
 ## sectionr2
+Boo
+
 
 ## sections2
+Boo
+
 
 ## sectiont2
+Boo
+
 
 ## sectionu2
+Boo
+
 
 ## sectionv2
+Boo
+
 
 ## sectionw2
+Boo
+
 
 ## sectionx2
+Boo
+
 
 ## sectiony2
+Boo
+
 
 ## sectionz2
+Boo
+
 
 ## Exercises {-}
 
