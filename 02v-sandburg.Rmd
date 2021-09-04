@@ -5,81 +5,153 @@ He won three Pulitzer Prizes: two for his poetry and one for his biography of Ab
 He enjoyed "unrivaled appeal as a poet in his day, perhaps because the breadth of his experiences connected him with so many strands of American life",
 and at his death in 1967, President Lyndon B. Johnson observed that "Carl Sandburg was more than the voice of America, more than the poet of its strength and genius. He was America."
 
-This Vignette needs to be really long so I can investigate the issue with running heads for unnumbered sections.  So...
+This Vignette is an unnumbered section.  The running header for unnumbered sections is described in `krantz.cls` on a line customized by Bryan Clair.
+You can find that line by searching for my name.
 
-Boo
+To test these custom section headers, let's make this vignette really long.
 
-Boo
+Bang pans!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
-Boo
+Look around.
 
-Boo
+Bang pans again!
 
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
+
+Look around.
+
+Bang pans again!
