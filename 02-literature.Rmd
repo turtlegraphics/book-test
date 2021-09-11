@@ -2,12 +2,13 @@
 ```
 
 # Literature
-Some text and exercises, and a demonstration vignette.
+Some text and exercises, and a demonstration vignette.  The text is from Sandburg^[@rootabaga].
+
 
 Read more of Rootabaga Stories at https://www.gutenberg.org/files/27085/27085-h/27085-h.htm
 \marginpar{\qrcode[height=0.5in]{https://www.gutenberg.org/files/27085/27085-h/27085-h.htm}}
 
-Or if you want something a little longer, read *Pride and Prejudice* or *Emma*, in the `austen`\indexfosdata{austen}
+Or if you want something a little longer, read *Pride and Prejudice*^[@pnp] or *Emma*, in the `austen`\indexfosdata{austen}
 data set from the `fosdata` package.
 
 ```{r peacock, echo=FALSE, out.width="30%", fig.align="center", fig.cap="Pride and Prejudice book cover."}

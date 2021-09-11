@@ -87,7 +87,7 @@ is satisfied, then a sum of $\frac{X_i - \mu_i}{s_n}$ converges in distribution 
 
 You can reference theorem-like environments with ```\@ref(thm:Lyapunov)```. 
 
-I would argue that Theorem \@ref(thm:Lyapunov) is a really good theorem.  Thanks, Dr. Lyapunov.
+I would argue that Theorem \@ref(thm:Lyapunov) is a really good theorem.  Thanks, Dr. Lyapunov.^[@Bill86]
 
 You can also reference across chapters. See Chapter \@ref(summary) for a link back to Lyapunov's theorem.
 
