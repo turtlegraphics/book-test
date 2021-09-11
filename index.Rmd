@@ -1,5 +1,5 @@
 ---
-site: bookdown::bookdown_site   # needed for R studio integraion (Build tab)
+site: bookdown::bookdown_site
 
 #
 # Book Metadata
