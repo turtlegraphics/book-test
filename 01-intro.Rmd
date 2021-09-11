@@ -87,6 +87,7 @@ mean(X >= 1)
 ## Footnotes and indexing
 
 After spending all day getting henna designs drawn, she noticed she had a foot note.[^henna]
+Footnotes in html books are numbered from 1 and never reset, so they just keep going up until the end of the book.  Footnotes in pdf books restart counting from 1 in each chapter.  So that's one thing that will be different between the pdf and html versions of a bookdown book.
 
 [^henna]: This joke (c) 2020 by Bryan Clair.
 
