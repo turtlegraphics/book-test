@@ -16,78 +16,13 @@ is one:
 A numbered example in the preface that will be referenced later.
 :::
 
-Another is that the preface should be done in roman numerals. So here's some text to make the preface continue onto another page:
+## Preface page numbers
 
-3
+In published books, the preface should be part of the front matter, numbered with roman page numbers.
+This book starts numbering the preface with Arabic.  It's quite easy to fix, just move the `\mainmatter`
+command from the `index.Rmd` file to the start of the first content chapter.
 
-1
+The reason it's not just done already is that when you do a single-chapter build, it's nice to have arabic page numbers on your single chapter.
+Keeping `\mainmatter` in the `index.Rmd` file accomplishes this.  I recommend developing the book with `\mainmatter` in the `index.Rmd` file, and
+then near the time of publication move it to the start of chapter 1.
 
-4
-
-1
-
-5
-
-9
-
-2
-
-6
-
-5
-
-3
-
-5
-
-8
-
-9
-
-7
-
-9
-
-3
-
-2
-
-3
-
-8
-
-4
-
-6
-
-2
-
-6
-
-4
-
-3
-
-3
-
-8
-
-3
-
-2
-
-7
-
-9
-
-5
-
-0
-
-2
-
-8
-
-8
-
-Are some digits of $\pi$.
