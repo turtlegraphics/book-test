@@ -1,7 +1,10 @@
 bookdown::gitbook:
   css: style.css
   pandoc_args:
+    # custom filter to handle fenced div
     - --lua-filter=fenced-blocks.lua
+    # citation package
+    - --csl="chicago-fullnote-bibliography.csl"  
   config:
     toc:
       before: |
@@ -21,6 +24,7 @@ bookdown::pdf_book:
     # this is a book, it should have chapters
     # this is default behavior when documentclass is book, but must be changed to use other styles.
     - --top-level-division=chapter
+    # citation package
+    - --csl="chicago-fullnote-bibliography.csl"
   latex_engine: xelatex
-  citation_package: natbib
   keep_tex: yes
