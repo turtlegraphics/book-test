@@ -1,5 +1,3 @@
-\mainmatter
-
 ```{r child = 'pre-chapter-script.Rmd'}
 ```
 
