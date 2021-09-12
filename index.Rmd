@@ -11,6 +11,7 @@ date: "`r Sys.Date()`"
 cover-image: images/cover_image.png
 favicon: images/favicon.png
 bibliography: ["references.bib"]
+suppress-bibliography: true
 
    # description field is metadata in the html files that will show up on
    # facebook, twitter, and other social media.  It does not appear in the book text.
